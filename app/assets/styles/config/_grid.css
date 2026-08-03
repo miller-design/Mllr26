@@ -2,5 +2,7 @@
  * Layout tokens.
  */
 :root {
-  --content-width: 95vw;
+  --grid-columns: 24;
+  --grid-gap: 1rem;
+  --grid-margin: 2rem;
 }
