@@ -10,7 +10,7 @@ const year = new Date().getFullYear();
 <template>
   <footer :class="[styles.footer]">
     <div :class="styles.inner">
-      <p>© {{ year }}</p>
+      <p>©{{ year }} - Mllr26</p>
     </div>
   </footer>
 </template>

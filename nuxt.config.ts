@@ -1,9 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
 
-  css: ['~/assets/styles/main.css'],
+  css: ["~/assets/styles/main.css"],
 
   /**
    * PostCSS pipeline for the Nuxt app.
@@ -17,12 +17,12 @@ export default defineNuxtConfig({
    */
   postcss: {
     plugins: {
-      'postcss-import': {},
-      '@csstools/postcss-global-data': {
-        files: ['./app/assets/styles/config/_breakpoints.css'],
+      "postcss-import": {},
+      "@csstools/postcss-global-data": {
+        files: ["./app/assets/styles/config/_breakpoints.css"],
       },
-      'postcss-custom-media': {},
-      'postcss-nested': {},
+      "postcss-custom-media": {},
+      "postcss-nested": {},
       autoprefixer: {},
     },
   },
@@ -33,24 +33,24 @@ export default defineNuxtConfig({
    */
   components: [
     {
-      path: '~/components',
+      path: "~/components",
       pathPrefix: false,
-      extensions: ['.vue'],
+      extensions: [".vue"],
     },
   ],
 
   runtimeConfig: {
     public: {
-      siteName: 'Nuxt Starter',
+      siteName: "Mllr26",
     },
   },
 
   app: {
     head: {
-      htmlAttrs: { lang: 'en' },
-      titleTemplate: '%s · Nuxt Starter',
+      htmlAttrs: { lang: "en" },
+      titleTemplate: "%s · Mllr26",
       meta: [
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
       ],
     },
   },
@@ -58,4 +58,4 @@ export default defineNuxtConfig({
   typescript: {
     strict: true,
   },
-})
+});

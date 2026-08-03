@@ -2,21 +2,18 @@
 /**
  * Homepage.
  */
-import styles from './styles.module.css'
+import styles from "./styles.module.css";
+import { PROJECTS } from "~/data/projects";
 
 useSeoMeta({
-  title: 'Home',
-})
-
-const config = useRuntimeConfig()
+  title: "Mllr26",
+  description:
+    "Portfolio of Jack Miller a creative developer based in the East Midlands (UK)",
+});
 </script>
 
 <template>
   <div :class="styles.page">
-    <h1>{{ config.public.siteName }}</h1>
-    <p :class="styles.lede">
-      Bare Nuxt starter with CSS Modules and PostCSS. Add pages, components, and
-      server routes as you need them.
-    </p>
+    <SitesList :projects="PROJECTS" />
   </div>
 </template>
