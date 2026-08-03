@@ -1,0 +1,16 @@
+/**
+ * Shared custom media queries injected into every CSS file via
+ * `@csstools/postcss-global-data` — no per-file import required.
+ *
+ * Usage in any `.css` / `.module.css` file:
+ *
+ * @media (--md) {
+ *   .root { padding-inline: 2rem; }
+ * }
+ */
+@custom-media --sm (min-width: 40em);
+@custom-media --md (min-width: 48em);
+@custom-media --lg (min-width: 64em);
+@custom-media --xl (min-width: 80em);
+@custom-media --motion-ok (prefers-reduced-motion: no-preference);
+@custom-media --motion-reduce (prefers-reduced-motion: reduce);

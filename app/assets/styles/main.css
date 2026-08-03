@@ -1,0 +1,13 @@
+/**
+ * Global stylesheet entry point.
+ * Component-scoped styles live in co-located `*.module.css` files.
+ */
+
+@import "./config/_breakpoints.css";
+@import "./config/_spacing.css";
+@import "./config/_typography.css";
+@import "./config/_grid.css";
+@import "./config/_colours.css";
+
+@import "./global/reset.css";
+@import "./global/base.css";

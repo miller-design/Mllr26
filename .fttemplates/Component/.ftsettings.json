@@ -1,0 +1,4 @@
+{
+  "name": "Component",
+  "openFilesWhenDone": ["index.vue", "types.ts", "styles.module.css"]
+}
