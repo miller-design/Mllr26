@@ -3,7 +3,7 @@
  * Homepage.
  */
 import styles from "./styles.module.css";
-import { PROJECTS } from "~/data/projects";
+// import { PROJECTS } from "~/data/projects";
 
 useSeoMeta({
   title: "Mllr26",
@@ -14,6 +14,7 @@ useSeoMeta({
 
 <template>
   <div :class="styles.page">
-    <SitesList :projects="PROJECTS" />
+    <HeroType />
+    <!-- <SitesList :projects="PROJECTS" /> -->
   </div>
 </template>

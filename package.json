@@ -16,7 +16,10 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
+    "@nuxt/fonts": "0.14.0",
+    "motion-v": "^2.3.0",
     "nuxt": "^4.5.1",
+    "vite-svg-loader": "^5.1.1",
     "vue": "^3.5.40",
     "vue-router": "^5.2.0"
   },

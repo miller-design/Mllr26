@@ -1,9 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import svgLoader from "vite-svg-loader";
+
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-
   css: ["~/assets/styles/main.css"],
+
+  vite: {
+    plugins: [
+      svgLoader({
+        defaultImport: "component",
+      }),
+    ],
+  },
 
   /**
    * PostCSS pipeline for the Nuxt app.
@@ -57,5 +66,17 @@ export default defineNuxtConfig({
 
   typescript: {
     strict: true,
+  },
+
+  modules: ["@nuxt/fonts", "motion-v/nuxt"],
+  fonts: {
+    provider: "google",
+    families: [
+      {
+        name: "Special Gothic",
+        provider: "google",
+        weights: ["400 700"],
+      },
+    ],
   },
 });

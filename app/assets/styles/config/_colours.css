@@ -1,14 +1,6 @@
-/**
- * Colour tokens — light/dark via `light-dark()`, driven by the
- * user's `prefers-color-scheme` when `color-scheme: light dark` is set.
- */
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
 
-  --color-bg: light-dark(#fff, #111);
-  --color-bg-muted: light-dark(#f5f5f5, #1a1a1a);
-  --color-border: light-dark(#e5e5e5, #2e2e2e);
-  --color-text: light-dark(#111, #f5f5f5);
-  --color-text-muted: light-dark(#737373, #a3a3a3);
-  --color-accent: light-dark(#111, #f5f5f5);
+  --color-white: #fff;
+  --color-black: #111;
 }

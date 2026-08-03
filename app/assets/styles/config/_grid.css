@@ -2,7 +2,12 @@
  * Layout tokens.
  */
 :root {
-  --grid-columns: 24;
+  --grid-columns: 6;
   --grid-gap: 1rem;
-  --grid-margin: 2rem;
+  --grid-margin: 1rem;
+
+  @media (--lg) {
+    --grid-columns: 12;
+    --grid-margin: 2rem;
+  }
 }

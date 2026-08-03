@@ -1,0 +1,33 @@
+.root {
+  width: 100%;
+  position: relative;
+  padding-left: var(--grid-margin);
+  padding-right: var(--grid-margin);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.logoType {
+  display: flex;
+  width: 100%;
+  fill: currentColor;
+  transform: translateY(20%);
+}
