@@ -16,7 +16,7 @@ export const PROJECTS: Project[] = [
     name: "Los York",
     features: ["Next.js", "Sanity CMS", "Motion"],
     link: "https://losyork.tv/",
-    year: 2025,
+    year: 2024,
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -27,7 +27,7 @@ export const PROJECTS: Project[] = [
     name: "Los Films",
     features: ["Next.js", "Sanity CMS", "Motion"],
     link: "https://losfilms.tv/",
-    year: 2025,
+    year: 2024,
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",

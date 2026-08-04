@@ -3,6 +3,7 @@
   position: relative;
   padding-left: var(--grid-margin);
   padding-right: var(--grid-margin);
+  margin-bottom: var(--space-14);
 }
 
 .srOnly {
@@ -18,7 +19,7 @@
 }
 
 .wrapper {
-  height: 100vh;
+  height: 107vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -29,5 +30,4 @@
   display: flex;
   width: 100%;
   fill: currentColor;
-  transform: translateY(20%);
 }

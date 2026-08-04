@@ -13,7 +13,8 @@
 @custom-media --lg (min-width: 64em); /* 1024px */
 @custom-media --xl (min-width: 80em); /* 1280px */
 @custom-media --xxl (min-width: 90em); /* 1440px */
-@custom-media --xxxl (min-width: 120em); /* 1920px */
+@custom-media --xxxl (min-width: 100em); /* 1600px */
+@custom-media --xxxxl (min-width: 120em); /* 1920px */
 
 @custom-media --motion-ok (prefers-reduced-motion: no-preference);
 @custom-media --motion-reduce (prefers-reduced-motion: reduce);
