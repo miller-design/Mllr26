@@ -37,7 +37,7 @@ function nameSegments(name: string): NameSegment[] {
 </script>
 
 <template>
-  <div :class="[styles.root, className]">
+  <div id="work" :class="[styles.root, className]">
     <ul :class="styles.list">
       <li v-for="project in projects" :key="project.id" :class="styles.item">
         <NuxtLink :to="{ name: 'projects-id', params: { id: project.id } }">

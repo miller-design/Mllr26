@@ -10,5 +10,6 @@ import styles from "./styles.module.css";
     <main :class="styles.main">
       <slot />
     </main>
+    <Footer :class="styles.footer" />
   </div>
 </template>
