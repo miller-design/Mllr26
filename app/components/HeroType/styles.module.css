@@ -3,7 +3,7 @@
   position: relative;
   padding-left: var(--grid-margin);
   padding-right: var(--grid-margin);
-  margin-bottom: var(--space-24);
+  padding-bottom: var(--space-24);
 }
 
 .srOnly {

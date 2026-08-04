@@ -1,6 +1,8 @@
 <script setup lang="ts">
 /**
- * Default layout — header, page slot, footer.
+ * Default layout — opaque main scrolls away to reveal the fixed footer.
+ *
+ * Footer must sit after `<main>` so its spacer is outside main's background.
  */
 import styles from "./styles.module.css";
 </script>
@@ -10,6 +12,6 @@ import styles from "./styles.module.css";
     <main :class="styles.main">
       <slot />
     </main>
-    <Footer :class="styles.footer" />
+    <Footer />
   </div>
 </template>

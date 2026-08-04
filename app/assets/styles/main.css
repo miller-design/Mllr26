@@ -10,3 +10,7 @@
 @import "./config/_colours.css";
 
 @import "./global/reset.css";
+
+body {
+  background-color: var(--color-grey);
+}

@@ -1,11 +1,12 @@
 .root {
-  display: flex;
-  flex-direction: column;
-  min-block-size: 100vh;
+  position: relative;
 }
 
 .main {
-  flex: 1;
+  position: relative;
+  z-index: 2;
   width: 100%;
+  min-block-size: 100vh;
   margin-inline: auto;
+  background-color: var(--color-white);
 }
