@@ -26,7 +26,7 @@ const logoType = {
       type: "spring",
       visualDuration: 0.5,
       bounce: 0.25,
-      delay: 0.5,
+      delay: 0.4,
     },
   },
 };
