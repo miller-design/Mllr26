@@ -12,29 +12,18 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    id: 8,
+    name: "Hotel Izza",
+    features: ["Next.js", "Storyblok CMS", "Motion"],
+    link: "https://izza.com/",
+    year: 2023,
+    designer: {
+      name: "Six",
+      link: "https://www.madebysix.com/",
+    },
+  },
+  {
     id: 7,
-    name: "Los York",
-    features: ["Next.js", "Sanity CMS", "Motion"],
-    link: "https://losyork.tv/",
-    year: 2024,
-    designer: {
-      name: "Six",
-      link: "https://www.madebysix.com/",
-    },
-  },
-  {
-    id: 6,
-    name: "Los Films",
-    features: ["Next.js", "Sanity CMS", "Motion"],
-    link: "https://losfilms.tv/",
-    year: 2024,
-    designer: {
-      name: "Six",
-      link: "https://www.madebysix.com/",
-    },
-  },
-  {
-    id: 5,
     name: "Kinfolk",
     features: ["WordPress", "WooCommerce", "GSAP"],
     link: "https://www.kinfolk.com/",
@@ -45,11 +34,23 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    id: 4,
-    name: "Hotel Izza",
-    features: ["Next.js", "Storyblok CMS", "Motion"],
-    link: "https://izza.com/",
-    year: 2023,
+    id: 6,
+    name: "Los York ®",
+    features: ["Next.js", "Sanity CMS", "Motion"],
+    link: "https://losyork.tv/",
+    year: 2024,
+    designer: {
+      name: "Six",
+      link: "https://www.madebysix.com/",
+    },
+  },
+
+  {
+    id: 5,
+    name: "Los ® Films",
+    features: ["Next.js", "Sanity CMS", "Motion"],
+    link: "https://losfilms.tv/",
+    year: 2024,
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -79,7 +80,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 2,
-    name: "Berkley And Stuart",
+    name: "Berkley & Stuart",
     features: ["WordPress", "WooCommerce"],
     link: "https://www.berkeleyandstuart.com/",
     year: 2022,
