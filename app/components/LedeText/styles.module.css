@@ -13,8 +13,8 @@
   grid-column: 1 / -2;
   font-size: var(--text-xl);
   font-weight: 500;
-  line-height: var(--leading-tight);
-  margin-bottom: var(--space-4);
+  line-height: var(--leading-normal);
+  margin-bottom: var(--space-6);
   text-wrap: pretty;
 
   @media (--lg) {
@@ -37,10 +37,19 @@
   font-weight: 400;
   line-height: var(--leading-normal);
   text-wrap: pretty;
+  margin-bottom: 0;
 
   & a {
     text-decoration: underline;
     text-underline-offset: 0.15em;
+
+    @media (hover: hover) {
+      transition: opacity 400ms ease;
+
+      &:hover {
+        opacity: 0.3;
+      }
+    }
   }
 
   @media (--lg) {

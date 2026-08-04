@@ -4,7 +4,7 @@ import svgLoader from "vite-svg-loader";
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  css: ["~/assets/styles/main.css"],
+  css: ["~/assets/styles/main.css", "lenis/dist/lenis.css"],
 
   vite: {
     plugins: [
@@ -68,7 +68,7 @@ export default defineNuxtConfig({
     strict: true,
   },
 
-  modules: ["@nuxt/fonts", "motion-v/nuxt"],
+  modules: ["@nuxt/fonts", "motion-v/nuxt", "lenis/nuxt"],
   fonts: {
     provider: "google",
     families: [
