@@ -9,4 +9,5 @@
   min-block-size: 100vh;
   margin-inline: auto;
   background-color: var(--color-white);
+  padding-bottom: var(--space-24);
 }

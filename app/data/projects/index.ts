@@ -1,5 +1,6 @@
 export type Project = {
   id: number;
+  slug: string;
   name: string;
   features: string[];
   link: string | null;
@@ -10,9 +11,22 @@ export type Project = {
   };
 };
 
+/**
+ * Finds a project by its URL slug.
+ *
+ * @param slug - URL segment, e.g. `"hotel-izza"`.
+ * @returns The matching project, or undefined if none exists.
+ * @example
+ * getProjectBySlug("kinfolk") // => Project | undefined
+ */
+export function getProjectBySlug(slug: string): Project | undefined {
+  return PROJECTS.find((project) => project.slug === slug);
+}
+
 export const PROJECTS: Project[] = [
   {
     id: 8,
+    slug: "hotel-izza",
     name: "Hotel Izza",
     features: ["Next.js", "Storyblok CMS", "Motion"],
     link: "https://izza.com/",
@@ -24,6 +38,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 7,
+    slug: "kinfolk",
     name: "Kinfolk",
     features: ["WordPress", "WooCommerce", "GSAP"],
     link: "https://www.kinfolk.com/",
@@ -35,6 +50,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 6,
+    slug: "los-york",
     name: "Los York ®",
     features: ["Next.js", "Sanity CMS", "Motion"],
     link: "https://losyork.tv/",
@@ -47,6 +63,7 @@ export const PROJECTS: Project[] = [
 
   {
     id: 5,
+    slug: "los-films",
     name: "Los ® Films",
     features: ["Next.js", "Sanity CMS", "Motion"],
     link: "https://losfilms.tv/",
@@ -58,6 +75,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 4,
+    slug: "fellowship",
     name: "Fellowship",
     features: ["WordPress", "GSAP"],
     link: null,
@@ -69,6 +87,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 3,
+    slug: "title",
     name: "Title",
     features: ["Nuxt.js", "Storyblok CMS"],
     link: "https://www.title.org.uk/",
@@ -80,6 +99,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 2,
+    slug: "berkeley-and-stuart",
     name: "Berkley & Stuart",
     features: ["WordPress", "WooCommerce"],
     link: "https://www.berkeleyandstuart.com/",
@@ -91,6 +111,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 1,
+    slug: "huxley-parlour",
     name: "Huxley Parlour",
     features: ["WordPress", "GSAP"],
     link: "https://huxleyparlour.com/",

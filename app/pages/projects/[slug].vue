@@ -2,12 +2,10 @@
 /**
  * Dynamic project template.
  */
-import { PROJECTS } from "~/data/projects";
+import { getProjectBySlug } from "~/data/projects";
 
-const { id } = useRoute().params;
-const project = PROJECTS.find(
-  (project) => project.id === parseInt(id as string),
-);
+const { slug } = useRoute().params;
+const project = getProjectBySlug(slug as string);
 
 if (!project) {
   throw createError({

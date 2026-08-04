@@ -39,8 +39,10 @@ function nameSegments(name: string): NameSegment[] {
 <template>
   <div id="work" :class="[styles.root, className]">
     <ul :class="styles.list">
-      <li v-for="project in projects" :key="project.id" :class="styles.item">
-        <NuxtLink :to="{ name: 'projects-id', params: { id: project.id } }">
+      <li v-for="project in projects" :key="project.slug" :class="styles.item">
+        <NuxtLink
+          :to="{ name: 'projects-slug', params: { slug: project.slug } }"
+        >
           <h3>
             <template
               v-for="(segment, index) in nameSegments(project.name)"
