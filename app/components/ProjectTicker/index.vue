@@ -80,7 +80,7 @@ const SNAP_EASE = [0.26, 0.02, 0.23, 0.94] as const;
 /** First paint only — slower reveal on page load. */
 const LOAD_TRANSITION = {
   ease: SNAP_EASE,
-  duration: 0.4,
+  duration: 0.7,
 } as const;
 
 /** Scroll-driven show/hide after the first entrance. */
