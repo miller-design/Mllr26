@@ -63,4 +63,8 @@
   @media (--xxxl) {
     grid-column: 2 / 6;
   }
+
+  @media (--xxxxl) {
+    grid-column: 2 / 5;
+  }
 }

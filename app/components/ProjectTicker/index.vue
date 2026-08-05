@@ -18,7 +18,7 @@ const SLIDES: Slide[] = [
 ];
 
 /** Dwell time per slide before flicking to the next. */
-const INTERVAL_MS = 1400;
+const INTERVAL_MS = 1000;
 
 /** Hide the ticker once scroll passes this many pixels. */
 const SCROLL_HIDE_THRESHOLD = 8;

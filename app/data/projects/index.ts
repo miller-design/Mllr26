@@ -1,3 +1,5 @@
+export type FeaturedImageRatio = "landscape" | "portrait" | "square";
+
 export type Project = {
   id: number;
   slug: string;
@@ -5,6 +7,8 @@ export type Project = {
   features: string[];
   link: string | null;
   year: number;
+  featuredImage: string;
+  featuredImageRatio: FeaturedImageRatio;
   designer: {
     name: string;
     link: string;
@@ -31,6 +35,8 @@ export const PROJECTS: Project[] = [
     features: ["Next.js", "Storyblok CMS", "Motion"],
     link: "https://izza.com/",
     year: 2023,
+    featuredImage: "https://picsum.photos/seed/hotel-izza/1200/800",
+    featuredImageRatio: "landscape",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -43,6 +49,8 @@ export const PROJECTS: Project[] = [
     features: ["WordPress", "WooCommerce", "GSAP"],
     link: "https://www.kinfolk.com/",
     year: 2024,
+    featuredImage: "https://picsum.photos/seed/kinfolk/600/720",
+    featuredImageRatio: "portrait",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -55,6 +63,8 @@ export const PROJECTS: Project[] = [
     features: ["Next.js", "Sanity CMS", "Motion"],
     link: "https://losyork.tv/",
     year: 2024,
+    featuredImage: "https://picsum.photos/seed/los-york/800/800",
+    featuredImageRatio: "square",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -68,6 +78,8 @@ export const PROJECTS: Project[] = [
     features: ["Next.js", "Sanity CMS", "Motion"],
     link: "https://losfilms.tv/",
     year: 2024,
+    featuredImage: "https://picsum.photos/seed/los-films/1200/800",
+    featuredImageRatio: "landscape",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -80,6 +92,8 @@ export const PROJECTS: Project[] = [
     features: ["WordPress", "GSAP"],
     link: null,
     year: 2023,
+    featuredImage: "https://picsum.photos/seed/fellowship/600/720",
+    featuredImageRatio: "portrait",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -92,6 +106,8 @@ export const PROJECTS: Project[] = [
     features: ["Nuxt.js", "Storyblok CMS"],
     link: "https://www.title.org.uk/",
     year: 2022,
+    featuredImage: "https://picsum.photos/seed/title/800/800",
+    featuredImageRatio: "square",
     designer: {
       name: "ZZ2C",
       link: "https://www.zz2c.studio/",
@@ -104,6 +120,8 @@ export const PROJECTS: Project[] = [
     features: ["WordPress", "WooCommerce"],
     link: "https://www.berkeleyandstuart.com/",
     year: 2022,
+    featuredImage: "https://picsum.photos/seed/berkeley-and-stuart/1200/800",
+    featuredImageRatio: "landscape",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -116,6 +134,8 @@ export const PROJECTS: Project[] = [
     features: ["WordPress", "GSAP"],
     link: "https://huxleyparlour.com/",
     year: 2022,
+    featuredImage: "https://picsum.photos/seed/huxley-parlour/600/720",
+    featuredImageRatio: "portrait",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
