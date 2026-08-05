@@ -11,14 +11,26 @@
 
 .list {
   position: relative;
-  grid-column: 7 / -1;
+  grid-column: 2/-1;
   grid-row: 1;
   padding: 0;
   margin: 0;
   list-style: none;
   display: flex;
   flex-direction: column;
-  row-gap: var(--space-6);
+  row-gap: var(--space-3);
+
+  @media (--md) {
+    row-gap: var(--space-4);
+  }
+
+  @media (--lg) {
+    grid-column: 7 / -1;
+  }
+
+  @media (--xl) {
+    row-gap: var(--space-6);
+  }
 
   @media (hover: hover) {
     &:hover a {
@@ -56,11 +68,15 @@
 }
 
 .featuredImage {
-  grid-column: 1 / 4;
-  grid-row: 1;
+  grid-column: 2 / -3;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+
+  @media (--lg) {
+    grid-column: 1 / 4;
+    grid-row: 1;
+  }
 
   & .imageWrapper {
     position: relative;

@@ -21,8 +21,9 @@ export default defineNuxtConfig({
    * 1. Resolve `@import` statements
    * 2. Inject shared custom-media / tokens into every CSS file
    * 3. Compile `@custom-media` queries
-   * 4. Compile nested rules
-   * 5. Add vendor prefixes last
+   * 4. Expand `@mixin` helpers (fluid scale — must be at-rules, not values)
+   * 5. Compile nested rules
+   * 6. Add vendor prefixes last
    */
   postcss: {
     plugins: {
@@ -31,6 +32,9 @@ export default defineNuxtConfig({
         files: ["./app/assets/styles/config/_breakpoints.css"],
       },
       "postcss-custom-media": {},
+      "postcss-mixins": {
+        mixinsFiles: ["./app/assets/styles/config/_mixins.css"],
+      },
       "postcss-nested": {},
       autoprefixer: {},
     },

@@ -4,6 +4,7 @@
  */
 
 @import "./config/_breakpoints.css";
+@import "./config/_fluid.css";
 @import "./config/_spacing.css";
 @import "./config/_typography.css";
 @import "./config/_grid.css";

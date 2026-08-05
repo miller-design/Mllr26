@@ -2,8 +2,16 @@
   position: fixed;
   inset: 0;
   width: 100%;
-  height: 75%;
+  height: 88%;
   pointer-events: none;
+
+  @media (--md) {
+    height: 80%;
+  }
+
+  @media (--xl) {
+    height: 75%;
+  }
 }
 
 .wrapper {
@@ -22,8 +30,33 @@
   position: relative;
   display: grid;
   place-items: center;
-  width: 25%;
+  width: 80%;
   aspect-ratio: 1 / 1;
+  transition: width 0.3s ease;
+
+  @media (--md) {
+    width: 65%;
+  }
+
+  @media (--lg) {
+    width: 45%;
+  }
+
+  @media (--xl) {
+    width: 40%;
+  }
+
+  @media (--xxl) {
+    width: 35%;
+  }
+
+  @media (--xxxl) {
+    width: 28%;
+  }
+
+  @media (--xxxxl) {
+    width: 25%;
+  }
 }
 
 .tickerItem {

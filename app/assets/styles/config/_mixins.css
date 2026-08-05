@@ -1,0 +1,13 @@
+/**
+ * PostCSS mixins — loaded by postcss-mixins via mixinsFiles (not @imported).
+ *
+ * @mixin fluid <token-name>, <min>, <max>
+ *   → --<token-name>: clamp(min, interpolated, max)
+ */
+@define-mixin fluid $name, $min, $max {
+  --$(name): clamp(
+    $(min),
+    calc($(min) + ($(max) - $(min)) * ((100vw - var(--fluid-min)) / var(--fluid-range))),
+    $(max)
+  );
+}

@@ -1,0 +1,9 @@
+/**
+ * Fluid scale bounds — linear interpolation from mobile to --xxxl.
+ * Tokens use `@mixin fluid <name>, <min>, <max>` (see _mixins.css).
+ */
+:root {
+  --fluid-min: 23.4375rem; /* 375px */
+  --fluid-max: 100em; /* 1600px — matches @custom-media --xxxl */
+  --fluid-range: calc(var(--fluid-max) - var(--fluid-min));
+}
