@@ -1,24 +1,75 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref, watch } from "vue";
 import { motion, useReducedMotion, useScroll } from "motion-v";
+import {
+  PROJECTS,
+  type FeaturedImageRatio,
+  type Project,
+} from "~/data/projects";
 import styles from "./styles.module.css";
 import type { ProjectTickerProps } from "./types";
 
-type SlideId = "landscape" | "portrait" | "square";
+/** How many random project images to cycle through on each page load. */
+const TICKER_SLIDE_COUNT = 4;
 
-interface Slide {
-  id: SlideId;
+interface TickerSlide {
+  project: Project;
   className: string;
 }
 
-const SLIDES: Slide[] = [
-  { id: "portrait", className: styles.portrait ?? "" },
-  { id: "landscape", className: styles.landscape ?? "" },
-  { id: "square", className: styles.square ?? "" },
-];
+const ratioClassMap: Record<FeaturedImageRatio, string> = {
+  landscape: styles.landscape ?? "",
+  portrait: styles.portrait ?? "",
+  square: styles.square ?? "",
+};
+
+/**
+ * Returns a shuffled copy of `projects` with at most `count` entries.
+ *
+ * @param projects - Full project list to sample from.
+ * @param count - Maximum number of projects to return.
+ * @returns A random subset, e.g. four projects when `count` is 4.
+ * @example
+ * pickRandomProjects(PROJECTS, 4) // => [kinfolk, title, hotel-izza, fellowship]
+ */
+function pickRandomProjects(projects: Project[], count: number): Project[] {
+  const pool = [...projects];
+  const limit = Math.min(count, pool.length);
+
+  for (let i = pool.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const current = pool[i];
+    const swap = pool[j];
+
+    if (current && swap) {
+      pool[i] = swap;
+      pool[j] = current;
+    }
+  }
+
+  return pool.slice(0, limit);
+}
+
+/**
+ * Builds ticker slides from a random subset of projects on load.
+ *
+ * @param projects - All site projects to sample from.
+ * @returns Slides with each project's ratio class for sizing.
+ * @example
+ * buildTickerSlides(PROJECTS)
+ * // => [{ project: kinfolk, className: "..." }, ...]
+ */
+function buildTickerSlides(projects: Project[]): TickerSlide[] {
+  return pickRandomProjects(projects, TICKER_SLIDE_COUNT).map((project) => ({
+    project,
+    className: ratioClassMap[project.featuredImageRatio],
+  }));
+}
+
+const slides = ref<TickerSlide[]>([]);
 
 /** Dwell time per slide before flicking to the next. */
-const INTERVAL_MS = 1000;
+const INTERVAL_MS = 800;
 
 /** Hide the ticker once scroll passes this many pixels. */
 const SCROLL_HIDE_THRESHOLD = 8;
@@ -56,16 +107,20 @@ let unsubscribeScroll: (() => void) | undefined;
  * Advance to the next slide in the ticker loop.
  *
  * @example
- * advanceSlide() // landscape → portrait → square → landscape
+ * advanceSlide() // slide 0 → 1 → 2 → 3 → 0
  */
 function advanceSlide() {
-  activeIndex.value = (activeIndex.value + 1) % SLIDES.length;
+  if (slides.value.length === 0) {
+    return;
+  }
+
+  activeIndex.value = (activeIndex.value + 1) % slides.value.length;
 }
 
 /**
  * Motion target for a slide based on whether it is the active index.
  *
- * @param index - Index of the slide within `SLIDES`.
+ * @param index - Index of the slide within `slides`.
  *
  * @example
  * slideAnimate(0) // { opacity: 1, scale: 1 } when activeIndex is 0
@@ -141,6 +196,7 @@ watch(isAtTop, (atTop) => {
 });
 
 onMounted(() => {
+  slides.value = buildTickerSlides(PROJECTS);
   isAtTop.value = scrollY.get() < SCROLL_HIDE_THRESHOLD;
   syncSlideTimer(isAtTop.value);
 
@@ -166,14 +222,22 @@ onUnmounted(() => {
         @animationComplete="onContainerAnimationComplete"
       >
         <motion.div
-          v-for="(slide, index) in SLIDES"
-          :key="slide.id"
-          :class="[styles.tickerItem, slide.className]"
+          v-for="(slide, index) in slides"
+          :key="slide.project.slug"
+          :class="styles.tickerItem"
           :aria-hidden="activeIndex !== index"
           :initial="false"
           :animate="slideAnimate(index)"
           :transition="slideTransition"
-        />
+        >
+          <div :class="[styles.imageWrapper, slide.className]">
+            <img
+              :src="slide.project.featuredImage"
+              :alt="`${slide.project.name} featured image`"
+              :class="styles.image"
+            />
+          </div>
+        </motion.div>
       </motion.div>
     </div>
   </div>
