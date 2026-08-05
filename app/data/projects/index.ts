@@ -29,7 +29,7 @@ export function getProjectBySlug(slug: string): Project | undefined {
 
 export const PROJECTS: Project[] = [
   {
-    id: 8,
+    id: 10,
     slug: "hotel-izza",
     name: "Hotel Izza",
     features: ["Next.js", "Storyblok CMS", "Motion"],
@@ -43,7 +43,7 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    id: 7,
+    id: 9,
     slug: "kinfolk",
     name: "Kinfolk",
     features: ["WordPress", "WooCommerce", "GSAP"],
@@ -57,7 +57,7 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    id: 6,
+    id: 8,
     slug: "los-york",
     name: "Los York ®",
     features: ["Next.js", "Sanity CMS", "Motion"],
@@ -70,9 +70,22 @@ export const PROJECTS: Project[] = [
       link: "https://www.madebysix.com/",
     },
   },
-
   {
-    id: 5,
+    id: 7,
+    slug: "gianni",
+    name: "Gianni",
+    features: ["Next.js", "Payload V3", "Motion"],
+    link: "https://www.gianniscumaci.com/",
+    year: 2025,
+    featuredImage: "https://picsum.photos/seed/gianni/600/720",
+    featuredImageRatio: "portrait",
+    designer: {
+      name: "TheOneOff",
+      link: "https://theoneoff.com/",
+    },
+  },
+  {
+    id: 6,
     slug: "los-films",
     name: "Los ® Films",
     features: ["Next.js", "Sanity CMS", "Motion"],
@@ -83,6 +96,20 @@ export const PROJECTS: Project[] = [
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
+    },
+  },
+  {
+    id: 5,
+    slug: "theoneoff",
+    name: "TheOneOff",
+    features: ["Next.js", "Payload V3", "GSAP"],
+    link: null,
+    year: 2026,
+    featuredImage: "https://picsum.photos/seed/theoneoff/800/800",
+    featuredImageRatio: "square",
+    designer: {
+      name: "TheOneOff",
+      link: "https://theoneoff.com/",
     },
   },
   {
