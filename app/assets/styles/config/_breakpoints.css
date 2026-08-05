@@ -15,6 +15,7 @@
 @custom-media --xxl (min-width: 90em); /* 1440px */
 @custom-media --xxxl (min-width: 100em); /* 1600px */
 @custom-media --xxxxl (min-width: 120em); /* 1920px */
+@custom-media --xxxxxl (min-width: 160em); /* 2560px */
 
 @custom-media --motion-ok (prefers-reduced-motion: no-preference);
 @custom-media --motion-reduce (prefers-reduced-motion: reduce);

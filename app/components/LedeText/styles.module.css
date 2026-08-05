@@ -29,6 +29,10 @@
   @media (--xxxl) {
     grid-column: 1 / 5;
   }
+
+  @media (--xxxxxl) {
+    grid-column: 1 / 4;
+  }
 }
 
 .text {
@@ -66,5 +70,9 @@
 
   @media (--xxxxl) {
     grid-column: 2 / 5;
+  }
+
+  @media (--xxxxxl) {
+    grid-column: 2 / 4;
   }
 }
