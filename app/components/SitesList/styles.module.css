@@ -7,11 +7,19 @@
   padding-left: var(--grid-margin);
   padding-right: var(--grid-margin);
   padding-bottom: var(--space-24);
+
+  @media (hover: hover) {
+    row-gap: var(--space-8);
+  }
+
+  @media (--lg) {
+    row-gap: 0;
+  }
 }
 
 .list {
   position: relative;
-  grid-column: 2/-1;
+  grid-column: 2 / -1;
   grid-row: 1;
   padding: 0;
   margin: 0;
@@ -61,28 +69,67 @@
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 500;
-    font-size: var(--text-5xl);
+    font-size: var(--text-3xl);
     line-height: var(--leading-tighter);
     margin-bottom: 0;
+
+    @media (--lg) {
+      font-size: var(--text-5xl);
+    }
   }
 }
 
 .featuredImage {
+  display: none;
   grid-column: 2 / -3;
-  display: flex;
   flex-direction: column;
   justify-content: flex-end;
+
+  /**
+   * Hover-capable viewports: always reserve the preview slot. Below `--lg`
+   * the frame is locked to portrait so ratio swaps never shift layout height.
+   */
+  @media (hover: hover) {
+    display: flex;
+  }
 
   @media (--lg) {
     grid-column: 1 / 4;
     grid-row: 1;
   }
 
-  & .imageWrapper {
+  & .imageFrame {
     position: relative;
     width: 100%;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+
+    @media (--lg) {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      aspect-ratio: auto;
+      height: 100%;
+      background-color: transparent;
+      overflow: visible;
+    }
+  }
+
+  & .imageWrapper {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    width: auto;
+    height: 100%;
     background-color: var(--color-black);
     overflow: hidden;
+
+    @media (--lg) {
+      position: relative;
+      inset: auto;
+      width: 100%;
+      height: auto;
+    }
   }
 
   & .image {
@@ -95,7 +142,12 @@
 }
 
 .landscape {
+  width: 90%;
   aspect-ratio: 3 / 2;
+
+  @media (--lg) {
+    width: 100%;
+  }
 }
 
 .portrait {

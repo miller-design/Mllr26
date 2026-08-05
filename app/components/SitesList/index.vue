@@ -13,9 +13,17 @@ import styles from "./styles.module.css";
 import type { SitesListProps } from "./types";
 import type { FeaturedImageRatio, Project } from "~/data/projects";
 
-const { className, projects } = defineProps<SitesListProps>();
+const { className, projects = [] } = defineProps<SitesListProps>();
 
-const activeProject = ref<Project | null>(null);
+/**
+ * Featured preview for the hovered list row. Defaults to the first project so
+ * smaller screens can reserve a stable image area before any hover. Stays on
+ * the last hovered project when the pointer leaves the list.
+ *
+ * @example
+ * activeProject.value // => projects[0] on mount
+ */
+const activeProject = ref<Project | null>(projects[0] ?? null);
 
 type NameSegment = {
   part: string;
@@ -60,10 +68,7 @@ function nameSegments(name: string): NameSegment[] {
 
 <template>
   <div id="work" :class="[styles.root, className]">
-    <ul
-      :class="styles.list"
-      @mouseleave="activeProject = null"
-    >
+    <ul :class="styles.list">
       <li
         v-for="project in projects"
         :key="project.slug"
@@ -93,18 +98,24 @@ function nameSegments(name: string): NameSegment[] {
       </li>
     </ul>
 
-    <div v-if="activeProject" :class="styles.featuredImage">
-      <div
-        :class="[
-          styles.imageWrapper,
-          ratioClass(activeProject.featuredImageRatio),
-        ]"
-      >
-        <img
-          :src="activeProject.featuredImage"
-          :alt="`${activeProject.name} featured image`"
-          :class="styles.image"
-        />
+    <div
+      v-if="activeProject"
+      :class="styles.featuredImage"
+      aria-hidden="true"
+    >
+      <div :class="styles.imageFrame">
+        <div
+          :class="[
+            styles.imageWrapper,
+            ratioClass(activeProject.featuredImageRatio),
+          ]"
+        >
+          <img
+            :src="activeProject.featuredImage"
+            :alt="`${activeProject.name} featured image`"
+            :class="styles.image"
+          />
+        </div>
       </div>
     </div>
   </div>
