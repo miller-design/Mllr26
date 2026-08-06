@@ -79,13 +79,13 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 7,
-    slug: "assemblage-views",
+    slug: "assemblage",
     name: "Assemblage",
     features: ["Wordpress", "GSAP"],
     link: "https://views.assemblageworld.com/",
     year: 2021,
-    featuredImage: "https://picsum.photos/seed/assemblage/600/720",
-    featuredImageRatio: "portrait",
+    featuredImage: "/projects/assemblage/thumbnail.webp",
+    featuredImageRatio: "landscape",
     description:
       "consequat dolore do eu ea non anim sint adipisicing esse ipsum fugiat ullamco dolore reprehenderit ipsum est ipsum dolore ut",
     designer: {
@@ -145,11 +145,11 @@ export const PROJECTS: Project[] = [
     id: 3,
     slug: "title",
     name: "Title",
-    features: ["Nuxt.js", "Storyblok CMS"],
+    features: ["Nuxt.js", "Storyblok CMS", "GSAP"],
     link: "https://www.title.org.uk/",
     year: 2022,
-    featuredImage: "https://picsum.photos/seed/title/800/800",
-    featuredImageRatio: "square",
+    featuredImage: "/projects/title/thumbnail.webp",
+    featuredImageRatio: "landscape",
     description:
       "consequat dolore do eu ea non anim sint adipisicing esse ipsum fugiat ullamco dolore reprehenderit ipsum est ipsum dolore ut",
     designer: {
@@ -164,7 +164,7 @@ export const PROJECTS: Project[] = [
     features: ["WordPress", "WooCommerce"],
     link: "https://www.berkeleyandstuart.com/",
     year: 2022,
-    featuredImage: "https://picsum.photos/seed/berkeley-and-stuart/1200/800",
+    featuredImage: "/projects/berkeley-and-stuart/thumbnail.webp",
     featuredImageRatio: "landscape",
     description:
       "consequat dolore do eu ea non anim sint adipisicing esse ipsum fugiat ullamco dolore reprehenderit ipsum est ipsum dolore ut",
