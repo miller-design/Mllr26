@@ -4,7 +4,8 @@ export type Project = {
   id: number;
   slug: string;
   name: string;
-  features: string[];
+  description?: string;
+  features?: string[];
   link: string | null;
   year: number;
   featuredImage: string;
@@ -35,8 +36,10 @@ export const PROJECTS: Project[] = [
     features: ["Next.js", "Storyblok CMS", "Motion"],
     link: "https://izza.com/",
     year: 2023,
-    featuredImage: "https://picsum.photos/seed/hotel-izza/1200/800",
+    featuredImage: "/projects/hotel-izza/thumbnail.webp",
     featuredImageRatio: "landscape",
+    description:
+      "consequat dolore do eu ea non anim sint adipisicing esse ipsum fugiat ullamco dolore reprehenderit ipsum est ipsum dolore ut",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -51,6 +54,8 @@ export const PROJECTS: Project[] = [
     year: 2024,
     featuredImage: "https://picsum.photos/seed/kinfolk/600/720",
     featuredImageRatio: "portrait",
+    description:
+      "consequat dolore do eu ea non anim sint adipisicing esse ipsum fugiat ullamco dolore reprehenderit ipsum est ipsum dolore ut",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -65,6 +70,8 @@ export const PROJECTS: Project[] = [
     year: 2024,
     featuredImage: "https://picsum.photos/seed/los-york/800/800",
     featuredImageRatio: "square",
+    description:
+      "consequat dolore do eu ea non anim sint adipisicing esse ipsum fugiat ullamco dolore reprehenderit ipsum est ipsum dolore ut",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -72,16 +79,18 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 7,
-    slug: "gianni",
-    name: "Gianni",
-    features: ["Next.js", "Payload V3", "Motion"],
-    link: "https://www.gianniscumaci.com/",
-    year: 2025,
-    featuredImage: "https://picsum.photos/seed/gianni/600/720",
+    slug: "assemblage-views",
+    name: "Assemblage",
+    features: ["Wordpress", "GSAP"],
+    link: "https://views.assemblageworld.com/",
+    year: 2021,
+    featuredImage: "https://picsum.photos/seed/assemblage/600/720",
     featuredImageRatio: "portrait",
+    description:
+      "consequat dolore do eu ea non anim sint adipisicing esse ipsum fugiat ullamco dolore reprehenderit ipsum est ipsum dolore ut",
     designer: {
-      name: "TheOneOff",
-      link: "https://theoneoff.com/",
+      name: "ZZ2C",
+      link: "https://www.zz2c.studio/",
     },
   },
   {
@@ -93,6 +102,8 @@ export const PROJECTS: Project[] = [
     year: 2024,
     featuredImage: "https://picsum.photos/seed/los-films/1200/800",
     featuredImageRatio: "landscape",
+    description:
+      "consequat dolore do eu ea non anim sint adipisicing esse ipsum fugiat ullamco dolore reprehenderit ipsum est ipsum dolore ut",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -107,6 +118,8 @@ export const PROJECTS: Project[] = [
     year: 2026,
     featuredImage: "https://picsum.photos/seed/theoneoff/800/800",
     featuredImageRatio: "square",
+    description:
+      "consequat dolore do eu ea non anim sint adipisicing esse ipsum fugiat ullamco dolore reprehenderit ipsum est ipsum dolore ut",
     designer: {
       name: "TheOneOff",
       link: "https://theoneoff.com/",
@@ -121,6 +134,8 @@ export const PROJECTS: Project[] = [
     year: 2023,
     featuredImage: "https://picsum.photos/seed/fellowship/600/720",
     featuredImageRatio: "portrait",
+    description:
+      "consequat dolore do eu ea non anim sint adipisicing esse ipsum fugiat ullamco dolore reprehenderit ipsum est ipsum dolore ut",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -135,6 +150,8 @@ export const PROJECTS: Project[] = [
     year: 2022,
     featuredImage: "https://picsum.photos/seed/title/800/800",
     featuredImageRatio: "square",
+    description:
+      "consequat dolore do eu ea non anim sint adipisicing esse ipsum fugiat ullamco dolore reprehenderit ipsum est ipsum dolore ut",
     designer: {
       name: "ZZ2C",
       link: "https://www.zz2c.studio/",
@@ -149,6 +166,8 @@ export const PROJECTS: Project[] = [
     year: 2022,
     featuredImage: "https://picsum.photos/seed/berkeley-and-stuart/1200/800",
     featuredImageRatio: "landscape",
+    description:
+      "consequat dolore do eu ea non anim sint adipisicing esse ipsum fugiat ullamco dolore reprehenderit ipsum est ipsum dolore ut",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -163,6 +182,8 @@ export const PROJECTS: Project[] = [
     year: 2022,
     featuredImage: "https://picsum.photos/seed/huxley-parlour/600/720",
     featuredImageRatio: "portrait",
+    description:
+      "consequat dolore do eu ea non anim sint adipisicing esse ipsum fugiat ullamco dolore reprehenderit ipsum est ipsum dolore ut",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",

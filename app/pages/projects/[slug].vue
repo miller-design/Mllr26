@@ -13,32 +13,28 @@ if (!project) {
     statusMessage: "Project not found",
   });
 }
+
+const sizeOverride = computed(() => {
+  if (project.name === "Huxley Parlour") {
+    return "small";
+  } else if (project.name === "Assemblage") {
+    return "medium";
+  } else {
+    return undefined;
+  }
+});
+
+const targetFolder = computed(() => {
+  return project.slug;
+});
 </script>
 
 <template>
   <div>
-    <h1>{{ project.name }}</h1>
-    <p>Date: {{ project.year }}</p>
-    <p>Features: {{ project.features.join(", ") }}</p>
-    <p>
-      Project Link:
-      <NuxtLink
-        v-if="project.link"
-        :to="project.link"
-        target="_blank"
-        rel="noopener noreferrer"
-        >{{ project.link }}</NuxtLink
-      >
-    </p>
-    <p>
-      Designer:
-      <a
-        v-if="project.designer.link"
-        :href="project.designer.link"
-        target="_blank"
-        rel="noopener noreferrer"
-        >{{ project.designer.name }}</a
-      >
-    </p>
+    <ProjectHero :title="project.name" :sizeOverride="sizeOverride" />
+    <div class="grid">
+      <ProjectDetails :project="project" />
+      <ProjectGallery :slug="targetFolder" />
+    </div>
   </div>
 </template>

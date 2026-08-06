@@ -11,3 +11,11 @@
     --grid-margin: 2rem;
   }
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--grid-gap);
+  padding-left: var(--grid-margin);
+  padding-right: var(--grid-margin);
+}

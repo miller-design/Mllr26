@@ -1,0 +1,70 @@
+.root {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding-left: var(--grid-margin);
+  padding-right: var(--grid-margin);
+  margin-bottom: calc(var(--space-24) + var(--title-offset));
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  column-gap: var(--grid-gap);
+}
+
+.title {
+  margin-top: auto;
+  grid-column: 1 / -1;
+  font-weight: 700;
+  line-height: 0.71;
+  text-transform: uppercase;
+  text-align: center;
+  transform: translateY(20%);
+
+  &.small {
+    font-size: 10vw;
+  }
+
+  &.medium {
+    font-size: 12vw;
+  }
+
+  &.large {
+    font-size: 16vw;
+  }
+
+  &.xlarge {
+    font-size: 20vw;
+  }
+}
+
+/**
+ * Fake ® — circle sized to cap height, bottom on the text baseline.
+ * Letter is absolutely centered so the box baseline is the circle edge.
+ * Uses em so it scales with the vw title sizes.
+ */
+.mark {
+  position: relative;
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  margin-inline: 0.06em;
+  border: 0.077em solid currentColor;
+  border-radius: 50%;
+  vertical-align: baseline;
+}
+
+.markLetter {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.5em;
+  font-weight: inherit;
+  line-height: 1;
+  text-transform: uppercase;
+}
