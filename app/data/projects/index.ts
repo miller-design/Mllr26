@@ -132,8 +132,8 @@ export const PROJECTS: Project[] = [
     features: ["WordPress", "GSAP"],
     link: null,
     year: 2023,
-    featuredImage: "https://picsum.photos/seed/fellowship/600/720",
-    featuredImageRatio: "portrait",
+    featuredImage: "/projects/fellowship/thumbnail.webp",
+    featuredImageRatio: "landscape",
     description:
       "consequat dolore do eu ea non anim sint adipisicing esse ipsum fugiat ullamco dolore reprehenderit ipsum est ipsum dolore ut",
     designer: {
