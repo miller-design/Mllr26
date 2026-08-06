@@ -15,13 +15,13 @@
   column-gap: var(--grid-gap);
 }
 
-.title {
+/**
+ * Holds layout offset + size tier so motion can animate `y` on the child
+ * without overriding the hanging `translateY(20%)`.
+ */
+.titleSlot {
   margin-top: auto;
   grid-column: 1 / -1;
-  font-weight: 700;
-  line-height: 0.71;
-  text-transform: uppercase;
-  text-align: center;
   transform: translateY(20%);
 
   &.small {
@@ -39,6 +39,14 @@
   &.xlarge {
     font-size: 20vw;
   }
+}
+
+.title {
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 0.71;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 /**
