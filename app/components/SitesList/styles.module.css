@@ -94,6 +94,7 @@
   display: none;
   grid-column: 2 / -3;
   flex-direction: column;
+  justify-content: flex-end;
 
   /**
    * Hover-capable viewports: always reserve the preview slot. Below `--lg`
@@ -124,15 +125,13 @@
     position: relative;
     width: 100%;
     aspect-ratio: 3 / 2;
-    position: sticky;
-    bottom: 0;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.1);
 
     @media (--lg) {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       aspect-ratio: auto;
-      height: 100%;
       background-color: transparent;
       overflow: visible;
     }
@@ -144,7 +143,6 @@
     bottom: 0;
     width: auto;
     height: 100%;
-    background-color: var(--color-black);
     overflow: hidden;
 
     @media (--lg) {

@@ -52,8 +52,8 @@ export const PROJECTS: Project[] = [
     features: ["WordPress", "WooCommerce", "GSAP"],
     link: "https://www.kinfolk.com/",
     year: 2024,
-    featuredImage: "https://picsum.photos/seed/kinfolk/600/720",
-    featuredImageRatio: "portrait",
+    featuredImage: "/projects/kinfolk/thumbnail.webp",
+    featuredImageRatio: "landscape",
     description:
       "consequat dolore do eu ea non anim sint adipisicing esse ipsum fugiat ullamco dolore reprehenderit ipsum est ipsum dolore ut",
     designer: {
