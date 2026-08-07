@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref, watch } from "vue";
 import { motion, useReducedMotion, useScroll } from "motion-v";
+import BracketIcon from "~/assets/icons/bracket.svg";
 import {
   PROJECTS,
   type FeaturedImageRatio,
@@ -238,6 +239,10 @@ onUnmounted(() => {
             />
           </div>
         </motion.div>
+        <div :class="styles.bracketIcons">
+          <BracketIcon />
+          <BracketIcon :class="styles.reverse" />
+        </div>
       </motion.div>
     </div>
   </div>

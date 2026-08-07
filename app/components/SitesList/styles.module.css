@@ -35,6 +35,17 @@
   display: flex;
   flex-direction: column;
   row-gap: var(--space-3);
+  pointer-events: none;
+
+  @media (hover: hover) {
+    &:hover a {
+      opacity: 0.6;
+    }
+
+    & .item:hover a {
+      opacity: 1;
+    }
+  }
 
   @media (--md) {
     row-gap: var(--space-4);
@@ -67,10 +78,12 @@
 }
 
 .item {
+  pointer-events: auto;
   position: relative;
   width: fit-content;
 
   & a {
+    transition: opacity 0.3s ease;
     text-decoration: none;
     color: inherit;
     width: initial;
