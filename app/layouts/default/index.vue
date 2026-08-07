@@ -9,6 +9,7 @@ import styles from "./styles.module.css";
 
 <template>
   <div :class="styles.root">
+    <Header />
     <main :class="styles.main">
       <slot />
     </main>
