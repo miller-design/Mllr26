@@ -68,8 +68,8 @@ export const PROJECTS: Project[] = [
     features: ["Next.js", "Sanity CMS", "Motion"],
     link: "https://losyork.tv/",
     year: 2024,
-    featuredImage: "https://picsum.photos/seed/los-york/800/800",
-    featuredImageRatio: "square",
+    featuredImage: "/projects/los-york/thumbnail.webp",
+    featuredImageRatio: "landscape",
     description:
       "consequat dolore do eu ea non anim sint adipisicing esse ipsum fugiat ullamco dolore reprehenderit ipsum est ipsum dolore ut",
     designer: {
@@ -100,7 +100,7 @@ export const PROJECTS: Project[] = [
     features: ["Next.js", "Sanity CMS", "Motion"],
     link: "https://losfilms.tv/",
     year: 2024,
-    featuredImage: "https://picsum.photos/seed/los-films/1200/800",
+    featuredImage: "/projects/los-films/thumbnail.webp",
     featuredImageRatio: "landscape",
     description:
       "consequat dolore do eu ea non anim sint adipisicing esse ipsum fugiat ullamco dolore reprehenderit ipsum est ipsum dolore ut",
@@ -116,8 +116,8 @@ export const PROJECTS: Project[] = [
     features: ["Next.js", "Payload V3", "GSAP"],
     link: null,
     year: 2026,
-    featuredImage: "https://picsum.photos/seed/theoneoff/800/800",
-    featuredImageRatio: "square",
+    featuredImage: "/projects/theoneoff/thumbnail.webp",
+    featuredImageRatio: "landscape",
     description:
       "consequat dolore do eu ea non anim sint adipisicing esse ipsum fugiat ullamco dolore reprehenderit ipsum est ipsum dolore ut",
     designer: {
@@ -180,8 +180,8 @@ export const PROJECTS: Project[] = [
     features: ["WordPress", "GSAP"],
     link: "https://huxleyparlour.com/",
     year: 2022,
-    featuredImage: "https://picsum.photos/seed/huxley-parlour/600/720",
-    featuredImageRatio: "portrait",
+    featuredImage: "/projects/huxley-parlour/thumbnail.webp",
+    featuredImageRatio: "landscape",
     description:
       "consequat dolore do eu ea non anim sint adipisicing esse ipsum fugiat ullamco dolore reprehenderit ipsum est ipsum dolore ut",
     designer: {
