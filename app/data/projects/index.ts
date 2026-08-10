@@ -135,7 +135,7 @@ export const PROJECTS: Project[] = [
     featuredImage: "/projects/fellowship/thumbnail.webp",
     featuredImageRatio: "landscape",
     description:
-      "Developed for Fellowship, a contemporary art gallery partnering with artists defining the digital age. Built with WordPress and GSAP, the site supports artists, exhibitions, films and editorial content through a cinematic, highly visual interface. Animation was used to add pace and atmosphere while keeping the focus on digital art, artist profiles and the gallery.",
+      "Developed for Fellowship, a contemporary art gallery partnering with artists defining the digital age. Built with WordPress and GSAP, the site supports artists, exhibitions, films and editorial content through a cinematic, highly visual interface. Animation was used to add pace and atmosphere while keeping the focus on digital art, artist profiles and the gallery.\n\n <em>Unfortunately the site is no longer live.</em>",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",

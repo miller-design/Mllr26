@@ -28,10 +28,10 @@
   }
 }
 
-.features span,
-.designer span,
-.description span,
-.year span {
+.features .label,
+.designer .label,
+.description .label,
+.year .label {
   font-weight: 500;
   margin-right: var(--space-1);
 }

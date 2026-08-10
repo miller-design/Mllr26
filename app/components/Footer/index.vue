@@ -46,9 +46,7 @@ const { footerHeight, y, overlayOpacity, prefersReducedMotion } =
   <motion.div
     :class="styles.overlay"
     aria-hidden="true"
-    :style="
-      prefersReducedMotion ? { opacity: 0 } : { opacity: overlayOpacity }
-    "
+    :style="prefersReducedMotion ? { opacity: 0 } : { opacity: overlayOpacity }"
   />
 
   <motion.div

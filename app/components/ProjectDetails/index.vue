@@ -8,17 +8,18 @@ const { project, className } = defineProps<ProjectDetailsProps>();
 <template>
   <div :class="[styles.root, className]">
     <div :class="styles.content">
-      <p :class="styles.description">
-        <span>Description:</span> {{ project.description }}
+      <p :class="styles.description" v-if="project.description">
+        <span :class="styles.label">Description:</span>
+        <span v-html="parseRichText(project.description)"></span>
       </p>
       <ul :class="styles.features">
-        <span>Tech:</span>
+        <span :class="styles.label">Tech:</span>
         <li v-for="feature in project.features" :key="feature">
           {{ feature }}
         </li>
       </ul>
       <p :class="styles.designer">
-        <span>Designed by: </span>
+        <span :class="styles.label">Designed by: </span>
         <NuxtLink
           :to="project.designer.link"
           target="_blank"
@@ -26,7 +27,9 @@ const { project, className } = defineProps<ProjectDetailsProps>();
           >{{ project.designer.name }}</NuxtLink
         >
       </p>
-      <p :class="styles.year"><span>Developed in: </span>{{ project.year }}</p>
+      <p :class="styles.year">
+        <span :class="styles.label">Developed in: </span>{{ project.year }}
+      </p>
       <NuxtLink
         v-if="project.link"
         :to="project.link"
