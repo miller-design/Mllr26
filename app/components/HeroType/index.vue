@@ -16,6 +16,9 @@ import LogoType from "~/assets/icons/logo-type.svg";
 
 const { className } = defineProps<HeroTypeProps>();
 
+/** Skip replay on browser back/forward; still play on link navigations. */
+const playEntrance = usePlayEntrance();
+
 const logoType = {
   initial: {
     y: "120%",
@@ -36,7 +39,11 @@ const logoType = {
   <div :class="[styles.root, className]">
     <h1 :class="styles.srOnly">MLLR26</h1>
     <div :class="styles.wrapper">
-      <motion.div :variants="logoType" initial="initial" animate="animate">
+      <motion.div
+        :variants="logoType"
+        :initial="playEntrance ? 'initial' : false"
+        animate="animate"
+      >
         <LogoType :class="styles.logoType" />
       </motion.div>
     </div>

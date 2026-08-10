@@ -16,6 +16,9 @@ import type { NameSegment, ProjectHeroProps } from "./types";
 
 const { title, sizeOverride, className } = defineProps<ProjectHeroProps>();
 
+/** Skip replay on browser back/forward; still play on link navigations. */
+const playEntrance = usePlayEntrance();
+
 /**
  * Splits a project name around ® so each mark can render as a CSS circle-R.
  *
@@ -112,7 +115,7 @@ const titleReveal = {
       <div :class="[styles.titleSlot, fontSize]">
         <motion.div
           :variants="titleReveal"
-          initial="initial"
+          :initial="playEntrance ? 'initial' : false"
           animate="animate"
         >
           <h1 ref="titleRef" :class="styles.title">

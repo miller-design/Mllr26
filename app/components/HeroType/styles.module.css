@@ -28,6 +28,8 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  /* Clip the slide-up so the logo does not cover LedeText mid-entrance. */
+  overflow: hidden;
 
   @media (--md) {
     height: 104vh;

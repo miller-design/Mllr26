@@ -1,6 +1,26 @@
-// app/composables/useLenisScroll.ts
+import type Lenis from "lenis";
+import { computed, shallowRef } from "vue";
+
+/** Client-only root Lenis — readable outside setup (e.g. router scrollBehavior). */
+const rootLenis = shallowRef<Lenis>();
+
+/**
+ * Registers the root Lenis instance for helpers that run outside setup.
+ *
+ * @param instance - Active Lenis instance, or `undefined` when destroyed
+ * @example
+ * setRootLenis(lenisRef.value?.lenis)
+ * setRootLenis(undefined)
+ */
+export function setRootLenis(instance: Lenis | undefined) {
+  rootLenis.value = instance;
+}
+
 /**
  * Root Lenis helpers: scroll targets + nested scroll locking for overlays.
+ *
+ * Safe to call from Vue setup and from non-setup contexts such as
+ * `router.options` scrollBehavior (does not use inject).
  *
  * @example
  * const { scrollTo, lock, unlock, isLocked } = useLenisScroll()
@@ -10,7 +30,7 @@
  * unlock() // modal / menu close
  */
 export function useLenisScroll() {
-  const lenis = useLenis();
+  const lenis = computed(() => rootLenis.value);
   const lockCount = useState("lenis-lock-count", () => 0);
   const isLocked = computed(() => lockCount.value > 0);
 
