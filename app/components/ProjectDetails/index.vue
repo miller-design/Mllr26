@@ -8,15 +8,15 @@ const { project, className } = defineProps<ProjectDetailsProps>();
 <template>
   <div :class="[styles.root, className]">
     <div :class="styles.content">
+      <p :class="styles.description">
+        <span>Description:</span> {{ project.description }}
+      </p>
       <ul :class="styles.features">
         <span>Tech:</span>
         <li v-for="feature in project.features" :key="feature">
           {{ feature }}
         </li>
       </ul>
-      <p :class="styles.description">
-        <span>Description:</span> {{ project.description }}
-      </p>
       <p :class="styles.designer">
         <span>Designed by: </span>
         <NuxtLink

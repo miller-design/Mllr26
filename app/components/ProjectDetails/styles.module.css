@@ -5,7 +5,7 @@
   top: var(--space-6);
   height: fit-content;
   padding-bottom: var(--space-8);
-  padding-top: var(--space-8);
+  padding-top: var(--space-2);
 
   @media (--md) {
     grid-column: 1 / 4;
@@ -28,14 +28,11 @@
   }
 }
 
-.content {
-}
-
 .features span,
 .designer span,
 .description span,
 .year span {
-  font-weight: 400;
+  font-weight: 500;
   margin-right: var(--space-1);
 }
 
@@ -60,7 +57,14 @@
   margin-bottom: var(--space-4);
   font-size: var(--text-base);
   line-height: var(--leading-normal);
-  text-wrap: balance;
+  text-align: justify;
+  padding-right: var(--grid-gap);
+
+  & span {
+    display: block;
+    width: 100%;
+    margin-bottom: var(--space-1);
+  }
 }
 
 .designer,
