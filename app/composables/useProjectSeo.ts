@@ -1,9 +1,13 @@
 import type { Project } from "~/data/projects";
-import { SITE_DESCRIPTION } from "~/lib/const";
+import {
+  projectShareTitle,
+  SITE_DESCRIPTION,
+} from "~/lib/seo";
 
 /**
  * Applies page SEO, Open Graph, and Schema.org metadata for a project.
  *
+ * Uses the project featured image for shares (not the generated `Mllr` template).
  * Strips simple HTML (e.g. `<em>`) from descriptions so meta tags stay plain text.
  *
  * @param project - Portfolio project used to populate title, description, and image.
@@ -15,16 +19,17 @@ export function useProjectSeo(project: Project) {
   const description =
     stripHtml(project.description ?? "") || SITE_DESCRIPTION;
   const title = project.name;
+  const shareTitle = projectShareTitle(title);
   const ogImage = project.featuredImage;
 
   useSeoMeta({
     title,
     description,
-    ogTitle: title,
+    ogTitle: shareTitle,
     ogDescription: description,
     ogImage,
     twitterCard: "summary_large_image",
-    twitterTitle: title,
+    twitterTitle: shareTitle,
     twitterDescription: description,
     twitterImage: ogImage,
   });

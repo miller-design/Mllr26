@@ -1,13 +1,8 @@
 /**
- * Shared site constants.
+ * Shared site constants (non-SEO).
+ *
+ * SEO / Open Graph copy lives in `~/lib/seo`.
  */
-
-/** Default meta description used across SEO helpers and page fallbacks. */
-export const SITE_DESCRIPTION =
-  "Portfolio of Jack Miller, a creative developer based in the East Midlands (UK).";
-
-/** Default Open Graph / Twitter share image (absolute path under `public/`). */
-export const SITE_OG_IMAGE = "/TwitterCard.webp";
 
 export type FooterLink = {
   id: number;

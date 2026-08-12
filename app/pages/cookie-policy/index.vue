@@ -2,16 +2,18 @@
 /**
  * Cookie policy page.
  */
-import { SITE_OG_IMAGE } from "~/lib/const";
+import { COOKIE_SEO } from "~/lib/seo";
 
 useSeoMeta({
-  title: "Cookie Policy",
-  description:
-    "How Mllr26 uses cookies and similar technologies on this site.",
+  title: COOKIE_SEO.title,
+  description: COOKIE_SEO.description,
   robots: "noindex, follow",
-  ogImage: SITE_OG_IMAGE,
   twitterCard: "summary_large_image",
-  twitterImage: SITE_OG_IMAGE,
+});
+
+useGeneratedOgImage({
+  title: COOKIE_SEO.title,
+  description: COOKIE_SEO.description,
 });
 </script>
 

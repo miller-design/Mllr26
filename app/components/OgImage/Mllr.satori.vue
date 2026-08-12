@@ -13,15 +13,16 @@
  *   description: 'WordPress, WooCommerce, GSAP',
  * })
  */
+import { SITE_DESCRIPTION, SITE_NAME } from "~/lib/seo";
+
 withDefaults(
   defineProps<{
     title?: string;
     description?: string;
   }>(),
   {
-    title: "Mllr26",
-    description:
-      "Portfolio of Jack Miller, a creative developer based in the East Midlands (UK).",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
   },
 );
 </script>

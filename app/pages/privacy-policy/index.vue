@@ -2,16 +2,18 @@
 /**
  * Privacy policy page.
  */
-import { SITE_OG_IMAGE } from "~/lib/const";
+import { PRIVACY_SEO } from "~/lib/seo";
 
 useSeoMeta({
-  title: "Privacy Policy",
-  description:
-    "How Mllr26 collects, uses, and protects personal information on this site.",
+  title: PRIVACY_SEO.title,
+  description: PRIVACY_SEO.description,
   robots: "noindex, follow",
-  ogImage: SITE_OG_IMAGE,
   twitterCard: "summary_large_image",
-  twitterImage: SITE_OG_IMAGE,
+});
+
+useGeneratedOgImage({
+  title: PRIVACY_SEO.title,
+  description: PRIVACY_SEO.description,
 });
 </script>
 

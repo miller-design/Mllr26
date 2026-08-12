@@ -1,5 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import svgLoader from "vite-svg-loader";
+import {
+  SITE_DESCRIPTION,
+  SITE_JOB_TITLE,
+  SITE_NAME,
+  SITE_OG_IMAGE,
+  SITE_PERSON_NAME,
+} from "./app/lib/seo";
 
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
@@ -59,9 +66,8 @@ export default defineNuxtConfig({
    */
   site: {
     url: process.env.NUXT_SITE_URL || "http://localhost:3000",
-    name: "Mllr26",
-    description:
-      "Portfolio of Jack Miller, a creative developer based in the East Midlands (UK).",
+    name: SITE_NAME,
+    description: SITE_DESCRIPTION,
     defaultLocale: "en",
     indexable: process.env.NUXT_SITE_ENV === "production",
   },
@@ -69,10 +75,9 @@ export default defineNuxtConfig({
   schemaOrg: {
     identity: {
       type: "Person",
-      name: "Jack Miller",
-      jobTitle: "Creative Developer",
-      description:
-        "Portfolio of Jack Miller, a creative developer based in the East Midlands (UK).",
+      name: SITE_PERSON_NAME,
+      jobTitle: SITE_JOB_TITLE,
+      description: SITE_DESCRIPTION,
       url: process.env.NUXT_SITE_URL || "http://localhost:3000",
     },
   },
@@ -96,19 +101,23 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      siteName: "Mllr26",
+      siteName: SITE_NAME,
     },
   },
 
+  /**
+   * Site-wide OG/Twitter image fallback when a page does not set its own
+   * (generated `Mllr` image or project featured image).
+   */
   app: {
     head: {
       htmlAttrs: { lang: "en" },
       meta: [
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { name: "theme-color", content: "#111111" },
-        { property: "og:image", content: "/TwitterCard.webp" },
+        { property: "og:image", content: SITE_OG_IMAGE },
         { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:image", content: "/TwitterCard.webp" },
+        { name: "twitter:image", content: SITE_OG_IMAGE },
       ],
       link: [
         {

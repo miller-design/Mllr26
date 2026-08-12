@@ -3,25 +3,29 @@
  * Homepage.
  */
 import { PROJECTS } from "~/data/projects";
-import { HERO_LEDE_TEXT, SITE_DESCRIPTION, SITE_OG_IMAGE } from "~/lib/const";
+import { HERO_LEDE_TEXT } from "~/lib/const";
+import { HOME_SEO } from "~/lib/seo";
 
 useSeoMeta({
-  title: "Jack Miller — Creative Developer",
-  description: SITE_DESCRIPTION,
-  ogTitle: "Mllr26 · Jack Miller",
-  ogDescription: SITE_DESCRIPTION,
-  ogImage: SITE_OG_IMAGE,
+  title: HOME_SEO.title,
+  description: HOME_SEO.description,
+  ogTitle: HOME_SEO.shareTitle,
+  ogDescription: HOME_SEO.description,
   twitterCard: "summary_large_image",
-  twitterTitle: "Mllr26 · Jack Miller",
-  twitterDescription: SITE_DESCRIPTION,
-  twitterImage: SITE_OG_IMAGE,
+  twitterTitle: HOME_SEO.shareTitle,
+  twitterDescription: HOME_SEO.description,
+});
+
+useGeneratedOgImage({
+  title: HOME_SEO.shareTitle,
+  description: HOME_SEO.description,
 });
 
 useSchemaOrg([
   defineWebPage({
     "@type": "ProfilePage",
-    name: "Jack Miller — Creative Developer",
-    description: SITE_DESCRIPTION,
+    name: HOME_SEO.shareTitle,
+    description: HOME_SEO.description,
   }),
 ]);
 </script>
