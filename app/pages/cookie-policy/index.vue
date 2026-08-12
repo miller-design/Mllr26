@@ -2,18 +2,15 @@
 /**
  * Cookie policy page.
  */
-import { COOKIE_SEO } from "~/lib/seo";
+import { COOKIE_SEO, SITE_OG_IMAGE } from "~/lib/seo";
 
 useSeoMeta({
   title: COOKIE_SEO.title,
   description: COOKIE_SEO.description,
   robots: "noindex, follow",
+  ogImage: SITE_OG_IMAGE,
   twitterCard: "summary_large_image",
-});
-
-useGeneratedOgImage({
-  title: COOKIE_SEO.title,
-  description: COOKIE_SEO.description,
+  twitterImage: SITE_OG_IMAGE,
 });
 </script>
 

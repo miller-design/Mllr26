@@ -106,8 +106,8 @@ export default defineNuxtConfig({
   },
 
   /**
-   * Site-wide OG/Twitter image fallback when a page does not set its own
-   * (generated `Mllr` image or project featured image).
+   * Site-wide OG/Twitter image fallback (`SITE_OG_IMAGE`).
+   * Project pages override with their featured image.
    */
   app: {
     head: {

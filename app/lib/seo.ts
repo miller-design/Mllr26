@@ -27,9 +27,6 @@ export const SITE_OG_IMAGE = "/TwitterCard.webp";
 /**
  * Homepage document + share meta.
  *
- * Homepage uses a generated `Mllr` OG image via `useGeneratedOgImage`.
- * `SITE_OG_IMAGE` remains the site-wide fallback in `nuxt.config` app head.
- *
  * @example
  * useSeoMeta({
  *   title: HOME_SEO.title,

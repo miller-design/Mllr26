@@ -7,7 +7,7 @@ import {
 /**
  * Applies page SEO, Open Graph, and Schema.org metadata for a project.
  *
- * Uses the project featured image for shares (not the generated `Mllr` template).
+ * Uses the project featured image for shares; other pages use `SITE_OG_IMAGE`.
  * Strips simple HTML (e.g. `<em>`) from descriptions so meta tags stay plain text.
  *
  * @param project - Portfolio project used to populate title, description, and image.

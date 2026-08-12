@@ -4,21 +4,18 @@
  */
 import { PROJECTS } from "~/data/projects";
 import { HERO_LEDE_TEXT } from "~/lib/const";
-import { HOME_SEO } from "~/lib/seo";
+import { HOME_SEO, SITE_OG_IMAGE } from "~/lib/seo";
 
 useSeoMeta({
   title: HOME_SEO.title,
   description: HOME_SEO.description,
   ogTitle: HOME_SEO.shareTitle,
   ogDescription: HOME_SEO.description,
+  ogImage: SITE_OG_IMAGE,
   twitterCard: "summary_large_image",
   twitterTitle: HOME_SEO.shareTitle,
   twitterDescription: HOME_SEO.description,
-});
-
-useGeneratedOgImage({
-  title: HOME_SEO.shareTitle,
-  description: HOME_SEO.description,
+  twitterImage: SITE_OG_IMAGE,
 });
 
 useSchemaOrg([
