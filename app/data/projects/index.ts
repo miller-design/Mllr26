@@ -180,3 +180,147 @@ export const PROJECTS: Project[] = [
     },
   },
 ];
+
+/**
+ * Gallery image paths per project slug (excludes thumbnail.webp).
+ * Sourced from public/projects/{slug}. Rebuild this file when gallery
+ * images are added or renamed.
+ */
+export const PROJECT_IMAGES: Record<string, string[]> = {
+  assemblage: [
+    "/projects/assemblage/assemblage-1.webp",
+    "/projects/assemblage/assemblage-2.webp",
+    "/projects/assemblage/assemblage-3.webp",
+    "/projects/assemblage/assemblage-4.webp",
+    "/projects/assemblage/assemblage-5.webp",
+    "/projects/assemblage/assemblage-6.webp",
+    "/projects/assemblage/assemblage-7.webp",
+    "/projects/assemblage/assemblage-8.webp",
+    "/projects/assemblage/assemblage-9.webp",
+    "/projects/assemblage/assemblage-10.webp",
+    "/projects/assemblage/assemblage-11.webp",
+    "/projects/assemblage/assemblage-12.webp",
+  ],
+  "berkeley-and-stuart": [
+    "/projects/berkeley-and-stuart/berkley-and-stuart-1.webp",
+    "/projects/berkeley-and-stuart/berkley-and-stuart-2.webp",
+    "/projects/berkeley-and-stuart/berkley-and-stuart-3.webp",
+    "/projects/berkeley-and-stuart/berkley-and-stuart-4.webp",
+    "/projects/berkeley-and-stuart/berkley-and-stuart-5.webp",
+    "/projects/berkeley-and-stuart/berkley-and-stuart-6.webp",
+    "/projects/berkeley-and-stuart/berkley-and-stuart-7.webp",
+    "/projects/berkeley-and-stuart/berkley-and-stuart-8.webp",
+    "/projects/berkeley-and-stuart/berkley-and-stuart-9.webp",
+    "/projects/berkeley-and-stuart/berkley-and-stuart-10.webp",
+    "/projects/berkeley-and-stuart/berkley-and-stuart-11.webp",
+  ],
+  fellowship: [
+    "/projects/fellowship/fellowship-1.webp",
+    "/projects/fellowship/fellowship-2.webp",
+    "/projects/fellowship/fellowship-3.webp",
+    "/projects/fellowship/fellowship-4.webp",
+    "/projects/fellowship/fellowship-5.webp",
+    "/projects/fellowship/fellowship-6.webp",
+    "/projects/fellowship/fellowship-7.webp",
+    "/projects/fellowship/fellowship-8.webp",
+    "/projects/fellowship/fellowship-9.webp",
+  ],
+  "hotel-izza": [
+    "/projects/hotel-izza/hotel-izza-1.webp",
+    "/projects/hotel-izza/hotel-izza-2.webp",
+    "/projects/hotel-izza/hotel-izza-3.webp",
+    "/projects/hotel-izza/hotel-izza-4.webp",
+    "/projects/hotel-izza/hotel-izza-5.webp",
+    "/projects/hotel-izza/hotel-izza-6.webp",
+    "/projects/hotel-izza/hotel-izza-7.webp",
+    "/projects/hotel-izza/hotel-izza-8.webp",
+    "/projects/hotel-izza/hotel-izza-11.webp",
+    "/projects/hotel-izza/hotel-izza-12.webp",
+    "/projects/hotel-izza/hotel-izza-13.webp",
+    "/projects/hotel-izza/hotel-izza-14.webp",
+    "/projects/hotel-izza/hotel-izza-15.webp",
+    "/projects/hotel-izza/hotel-izza-16.webp",
+  ],
+  "huxley-parlour": [
+    "/projects/huxley-parlour/huxley-parlour-1.webp",
+    "/projects/huxley-parlour/huxley-parlour-2.webp",
+    "/projects/huxley-parlour/huxley-parlour-3.webp",
+    "/projects/huxley-parlour/huxley-parlour-4.webp",
+    "/projects/huxley-parlour/huxley-parlour-5.webp",
+    "/projects/huxley-parlour/huxley-parlour-6.webp",
+    "/projects/huxley-parlour/huxley-parlour-7.webp",
+    "/projects/huxley-parlour/huxley-parlour-8.webp",
+    "/projects/huxley-parlour/huxley-parlour-9.webp",
+    "/projects/huxley-parlour/huxley-parlour-10.webp",
+    "/projects/huxley-parlour/huxley-parlour-11.webp",
+  ],
+  kinfolk: [
+    "/projects/kinfolk/kinfolk-1.webp",
+    "/projects/kinfolk/kinfolk-2.webp",
+    "/projects/kinfolk/kinfolk-3.webp",
+    "/projects/kinfolk/kinfolk-4.webp",
+    "/projects/kinfolk/kinfolk-5.webp",
+    "/projects/kinfolk/kinfolk-6.webp",
+    "/projects/kinfolk/kinfolk-7.webp",
+    "/projects/kinfolk/kinfolk-8.webp",
+    "/projects/kinfolk/kinfolk-9.webp",
+    "/projects/kinfolk/kinfolk-10.webp",
+    "/projects/kinfolk/kinfolk-11.webp",
+    "/projects/kinfolk/kinfolk-12.webp",
+    "/projects/kinfolk/kinfolk-13.webp",
+    "/projects/kinfolk/kinfolk-14.webp",
+  ],
+  "los-films": [
+    "/projects/los-films/los-films-1.webp",
+    "/projects/los-films/los-films-2.webp",
+    "/projects/los-films/los-films-3.webp",
+    "/projects/los-films/los-films-4.webp",
+    "/projects/los-films/los-films-5.webp",
+    "/projects/los-films/los-films-6.webp",
+    "/projects/los-films/los-films-7.webp",
+    "/projects/los-films/los-films-8.webp",
+    "/projects/los-films/los-films-9.webp",
+  ],
+  "los-york": [
+    "/projects/los-york/los-york-1.webp",
+    "/projects/los-york/los-york-2.webp",
+    "/projects/los-york/los-york-3.webp",
+    "/projects/los-york/los-york-4.webp",
+    "/projects/los-york/los-york-5.webp",
+    "/projects/los-york/los-york-6.webp",
+    "/projects/los-york/los-york-7.webp",
+    "/projects/los-york/los-york-8.webp",
+    "/projects/los-york/los-york-9.webp",
+  ],
+  theoneoff: [
+    "/projects/theoneoff/theoneoff-1.webp",
+    "/projects/theoneoff/theoneoff-2.webp",
+    "/projects/theoneoff/theoneoff-3.webp",
+    "/projects/theoneoff/theoneoff-4.webp",
+    "/projects/theoneoff/theoneoff-5.webp",
+    "/projects/theoneoff/theoneoff-6.webp",
+    "/projects/theoneoff/theoneoff-7.webp",
+    "/projects/theoneoff/theoneoff-8.webp",
+  ],
+  title: [
+    "/projects/title/title-1.webp",
+    "/projects/title/title-2.webp",
+    "/projects/title/title-3.webp",
+    "/projects/title/title-4.webp",
+    "/projects/title/title-5.webp",
+    "/projects/title/title-6.webp",
+  ],
+};
+
+/**
+ * Returns gallery image URLs for a project slug.
+ *
+ * @param slug - Project folder under public/projects, e.g. "hotel-izza".
+ * @returns Absolute public paths for gallery images (empty if unknown).
+ * @example
+ * getProjectImages("assemblage")
+ * // => ["/projects/assemblage/assemblage-1.webp", ...]
+ */
+export function getProjectImages(slug: string): string[] {
+  return PROJECT_IMAGES[slug] ?? [];
+}
