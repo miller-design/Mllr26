@@ -18,11 +18,20 @@ const message = computed(
   () => props.error.statusText || props.error.message || 'Something went wrong',
 )
 
+useSeoMeta({
+  title: computed(() => {
+    const status = props.error.statusCode || props.error.status || "Error";
+    return `${status}`;
+  }),
+  description: computed(() => message.value),
+  robots: "noindex, nofollow",
+});
+
 /**
  * Clears the error and returns home.
  */
 function goHome() {
-  clearError({ redirect: '/' })
+  clearError({ redirect: "/" });
 }
 </script>
 

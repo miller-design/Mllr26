@@ -52,6 +52,48 @@ export default defineNuxtConfig({
     },
   ],
 
+  /**
+   * Shared site identity for @nuxtjs/seo (canonicals, sitemap, OG, schema).
+   * Override `url` in production via `NUXT_SITE_URL`.
+   * Set `NUXT_SITE_ENV=production` to allow indexing.
+   */
+  site: {
+    url: process.env.NUXT_SITE_URL || "http://localhost:3000",
+    name: "Mllr26",
+    description:
+      "Portfolio of Jack Miller, a creative developer based in the East Midlands (UK).",
+    defaultLocale: "en",
+    indexable: process.env.NUXT_SITE_ENV === "production",
+  },
+
+  schemaOrg: {
+    identity: {
+      type: "Person",
+      name: "Jack Miller",
+      jobTitle: "Creative Technologist",
+      description:
+        "Portfolio of Jack Miller, a creative developer based in the East Midlands (UK).",
+      url: process.env.NUXT_SITE_URL || "http://localhost:3000",
+    },
+  },
+
+  routeRules: {
+    "/privacy-policy": { robots: "noindex, follow", sitemap: false },
+    "/cookie-policy": { robots: "noindex, follow", sitemap: false },
+  },
+
+  sitemap: {
+    sources: ["/api/__sitemap__/urls"],
+  },
+
+  ogImage: {
+    defaults: {
+      width: 1200,
+      height: 630,
+      cacheMaxAgeSeconds: 60 * 60 * 24 * 7,
+    },
+  },
+
   runtimeConfig: {
     public: {
       siteName: "Mllr26",
@@ -61,9 +103,43 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: "en" },
-      titleTemplate: "%s · Mllr26",
       meta: [
         { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { name: "theme-color", content: "#111111" },
+        { property: "og:image", content: "/TwitterCard.webp" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:image", content: "/TwitterCard.webp" },
+      ],
+      link: [
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: "/favicons/favicon.ico",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "96x96",
+          href: "/favicons/favicon-96x96.png",
+        },
+        {
+          rel: "apple-touch-icon",
+          sizes: "180x180",
+          href: "/favicons/apple-touch-icon.png",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "192x192",
+          href: "/favicons/icon-192.png",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "512x512",
+          href: "/favicons/icon-512.png",
+        },
+        { rel: "manifest", href: "/site.webmanifest" },
       ],
     },
   },
@@ -72,7 +148,7 @@ export default defineNuxtConfig({
     strict: true,
   },
 
-  modules: ["@nuxt/fonts", "motion-v/nuxt", "lenis/nuxt"],
+  modules: ["@nuxtjs/seo", "@nuxt/fonts", "motion-v/nuxt", "lenis/nuxt"],
   fonts: {
     provider: "google",
     families: [

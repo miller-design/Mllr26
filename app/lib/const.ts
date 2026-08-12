@@ -2,6 +2,13 @@
  * Shared site constants.
  */
 
+/** Default meta description used across SEO helpers and page fallbacks. */
+export const SITE_DESCRIPTION =
+  "Portfolio of Jack Miller, a creative developer based in the East Midlands (UK).";
+
+/** Default Open Graph / Twitter share image (absolute path under `public/`). */
+export const SITE_OG_IMAGE = "/TwitterCard.webp";
+
 export type FooterLink = {
   id: number;
   text: string;

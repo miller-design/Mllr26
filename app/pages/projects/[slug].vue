@@ -14,6 +14,8 @@ if (!project) {
   });
 }
 
+useProjectSeo(project);
+
 const sizeOverride = computed(() => {
   if (project.name === "Huxley Parlour") {
     return "small";
