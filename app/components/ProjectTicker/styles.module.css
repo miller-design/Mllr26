@@ -30,13 +30,9 @@
   position: relative;
   display: grid;
   place-items: center;
-  width: 80%;
+  width: 65%;
   aspect-ratio: 1 / 1;
   transition: width 0.3s ease;
-
-  @media (--md) {
-    width: 65%;
-  }
 
   @media (--lg) {
     width: 45%;
@@ -108,8 +104,12 @@
 
   & svg {
     width: auto;
-    height: 25vh;
+    height: 21vh;
     transform: translateX(-100%);
+
+    @media (--md) {
+      height: 25vh;
+    }
 
     &.reverse {
       transform: translateX(100%) rotate(180deg);

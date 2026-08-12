@@ -7,7 +7,7 @@ export type Project = {
   description?: string;
   features?: string[];
   link: string | null;
-  year: number;
+  year?: number;
   featuredImage: string;
   featuredImageRatio: FeaturedImageRatio;
   designer: {
@@ -35,7 +35,6 @@ export const PROJECTS: Project[] = [
     name: "Hotel Izza",
     features: ["Next.js", "Storyblok CMS", "Motion"],
     link: "https://izza.com/",
-    year: 2023,
     featuredImage: "/projects/hotel-izza/thumbnail.webp",
     featuredImageRatio: "landscape",
     description:
@@ -51,7 +50,6 @@ export const PROJECTS: Project[] = [
     name: "Kinfolk",
     features: ["WordPress", "WooCommerce", "GSAP"],
     link: "https://www.kinfolk.com/",
-    year: 2024,
     featuredImage: "/projects/kinfolk/thumbnail.webp",
     featuredImageRatio: "landscape",
     description:
@@ -67,7 +65,6 @@ export const PROJECTS: Project[] = [
     name: "Los York ®",
     features: ["Next.js", "Sanity CMS", "Motion "],
     link: "https://losyork.tv/",
-    year: 2024,
     featuredImage: "/projects/los-york/thumbnail.webp",
     featuredImageRatio: "landscape",
     description:
@@ -83,7 +80,6 @@ export const PROJECTS: Project[] = [
     name: "Assemblage",
     features: ["Wordpress", "GSAP"],
     link: "https://views.assemblageworld.com/",
-    year: 2021,
     featuredImage: "/projects/assemblage/thumbnail.webp",
     featuredImageRatio: "landscape",
     description:
@@ -99,7 +95,6 @@ export const PROJECTS: Project[] = [
     name: "Los ® Films",
     features: ["Next.js", "Sanity CMS", "Motion (Framer Motion)"],
     link: "https://losfilms.tv/",
-    year: 2024,
     featuredImage: "/projects/los-films/thumbnail.webp",
     featuredImageRatio: "landscape",
     description:
@@ -115,7 +110,6 @@ export const PROJECTS: Project[] = [
     name: "TheOneOff",
     features: ["Next.js", "Payload V3", "GSAP"],
     link: "https://theoneoff.com/",
-    year: 2026,
     featuredImage: "/projects/theoneoff/thumbnail.webp",
     featuredImageRatio: "landscape",
     description:
@@ -131,7 +125,6 @@ export const PROJECTS: Project[] = [
     name: "Fellowship",
     features: ["WordPress", "GSAP"],
     link: null,
-    year: 2023,
     featuredImage: "/projects/fellowship/thumbnail.webp",
     featuredImageRatio: "landscape",
     description:
@@ -147,7 +140,6 @@ export const PROJECTS: Project[] = [
     name: "Title",
     features: ["Nuxt.js", "Storyblok CMS", "GSAP"],
     link: "https://www.title.org.uk/",
-    year: 2022,
     featuredImage: "/projects/title/thumbnail.webp",
     featuredImageRatio: "landscape",
     description:
@@ -163,7 +155,6 @@ export const PROJECTS: Project[] = [
     name: "Berkley & Stuart",
     features: ["WordPress", "WooCommerce", "GSAP"],
     link: "https://www.berkeleyandstuart.com/",
-    year: 2022,
     featuredImage: "/projects/berkeley-and-stuart/thumbnail.webp",
     featuredImageRatio: "landscape",
     description:
@@ -179,7 +170,6 @@ export const PROJECTS: Project[] = [
     name: "Huxley Parlour",
     features: ["WordPress", "GSAP"],
     link: "https://huxleyparlour.com/",
-    year: 2022,
     featuredImage: "/projects/huxley-parlour/thumbnail.webp",
     featuredImageRatio: "landscape",
     description:
