@@ -70,7 +70,7 @@ export default defineNuxtConfig({
     identity: {
       type: "Person",
       name: "Jack Miller",
-      jobTitle: "Creative Technologist",
+      jobTitle: "Creative Developer",
       description:
         "Portfolio of Jack Miller, a creative developer based in the East Midlands (UK).",
       url: process.env.NUXT_SITE_URL || "http://localhost:3000",
