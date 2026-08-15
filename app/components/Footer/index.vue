@@ -26,7 +26,7 @@ const year = new Date().getFullYear();
 const footerRef = ref<HTMLElement | ComponentPublicInstance | null>(null);
 const spacerRef = ref<HTMLElement | null>(null);
 
-const { footerHeight, y, overlayOpacity, prefersReducedMotion } =
+const { footerHeight, y, overlayOpacity, shouldReveal } =
   useFooterReveal({
     footerRef,
     spacerRef,
@@ -44,15 +44,16 @@ const { footerHeight, y, overlayOpacity, prefersReducedMotion } =
 
   <!-- Fixed full-viewport background — already in place; opacity only tracks reveal -->
   <motion.div
+    v-if="shouldReveal"
     :class="styles.overlay"
     aria-hidden="true"
-    :style="prefersReducedMotion ? { opacity: 0 } : { opacity: overlayOpacity }"
+    :style="{ opacity: overlayOpacity }"
   />
 
   <motion.div
     ref="footerRef"
     :class="styles.shell"
-    :style="prefersReducedMotion ? undefined : { y }"
+    :style="shouldReveal ? { y } : undefined"
   >
     <footer :class="[styles.root, className]">
       <div :class="styles.wordmark">

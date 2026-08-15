@@ -1,4 +1,5 @@
 import { useReducedMotion, useScroll, useSpring, useTransform } from "motion-v";
+import { useMediaQuery } from "@vueuse/core";
 import type { ComponentPublicInstance, Ref } from "vue";
 
 type ElementRef = Ref<HTMLElement | ComponentPublicInstance | null>;
@@ -55,6 +56,10 @@ export function useFooterReveal({
   revealOffset = "30%",
 }: UseFooterRevealOptions) {
   const prefersReducedMotion = useReducedMotion();
+  const supportsHover = useMediaQuery("(hover: hover)");
+  const shouldReveal = computed(
+    () => supportsHover.value && !prefersReducedMotion.value,
+  );
   const footerHeight = ref(0);
 
   let resizeObserver: ResizeObserver | undefined;
@@ -94,7 +99,9 @@ export function useFooterReveal({
    * Overlay opacity tracks reveal progress 1:1 (no spring) — the veil is
    * already covering the screen; only the fade is scroll-linked.
    */
-  const overlayOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  // Function form keeps opacity off Motion's native ViewTimeline path, which
+  // flickers for this fixed layer on touch browsers.
+  const overlayOpacity = useTransform(scrollYProgress, (progress) => 1 - progress);
 
   const y = useSpring(rawY, {
     stiffness: 220,
@@ -106,6 +113,6 @@ export function useFooterReveal({
     footerHeight,
     y,
     overlayOpacity,
-    prefersReducedMotion,
+    shouldReveal,
   };
 }

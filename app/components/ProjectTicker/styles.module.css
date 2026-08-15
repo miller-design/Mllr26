@@ -30,9 +30,13 @@
   position: relative;
   display: grid;
   place-items: center;
-  width: 65%;
+  width: 75%;
   aspect-ratio: 1 / 1;
   transition: width 0.3s ease;
+
+  @media (--md) {
+    width: 50%;
+  }
 
   @media (--lg) {
     width: 45%;
@@ -104,11 +108,15 @@
 
   & svg {
     width: auto;
-    height: 21vh;
+    height: 16vh;
     transform: translateX(-100%);
 
     @media (--md) {
-      height: 25vh;
+      height: 20vh;
+    }
+
+    @media (--lg) {
+      width: 25vh;
     }
 
     &.reverse {

@@ -6,7 +6,7 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  min-block-size: 100vh;
+  min-block-size: 100svh;
   margin-inline: auto;
   background-color: var(--color-white);
   padding-bottom: var(--space-24);

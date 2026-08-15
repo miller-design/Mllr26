@@ -23,7 +23,7 @@
 }
 
 .wrapper {
-  height: 103vh;
+  height: 103svh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -32,11 +32,11 @@
   overflow: hidden;
 
   @media (--md) {
-    height: 104vh;
+    height: 104svh;
   }
 
   @media (--lg) {
-    height: 107vh;
+    height: 107svh;
   }
 }
 

@@ -1,10 +1,14 @@
 .root {
   position: relative;
-  width: 100%;
   grid-column: 1 / -1;
+  position: relative;
+  left: calc(var(--grid-margin) * -1);
+  width: calc(100% + var(--grid-margin) * 2);
 
   @media (--md) {
     grid-column: 4 / -1;
+    left: 0;
+    width: calc(100% + var(--grid-margin));
   }
 
   @media (--lg) {
