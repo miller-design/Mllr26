@@ -4,6 +4,7 @@
   position: relative;
   left: calc(var(--grid-margin) * -1);
   width: calc(100% + var(--grid-margin) * 2);
+  margin-bottom: calc(var(--space-24) * -1);
 
   @media (--md) {
     grid-column: 4 / -1;
