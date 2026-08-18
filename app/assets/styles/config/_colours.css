@@ -6,4 +6,6 @@
   --color-black: #111;
   --color-bg: var(--color-white);
   --color-text: var(--color-black);
+
+  --color-red: #ff0000;
 }
