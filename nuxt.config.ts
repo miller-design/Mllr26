@@ -100,6 +100,10 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    resendApiKey: "",
+    resendFromName: "",
+    resendFromEmail: "",
+    resendToEmail: "",
     public: {
       siteName: SITE_NAME,
     },

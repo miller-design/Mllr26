@@ -21,7 +21,10 @@ onMounted(() => {
   resizeObserver.observe(panel.value!);
 });
 
-onBeforeUnmount(() => resizeObserver?.disconnect());
+onBeforeUnmount(() => {
+  resizeObserver?.disconnect();
+  clearTimeout(resetTimeout);
+});
 
 const formFields = [
   {
@@ -79,6 +82,34 @@ function clearErrors() {
   error.value = null;
   fieldErrors.value = {};
 }
+
+/**
+ * Resets all form fields and submission state to their initial values.
+ * Called after the panel close animation so users don't see fields clear mid-transition.
+ *
+ * @example
+ * resetForm()
+ */
+function resetForm() {
+  form.name = "";
+  form.company = "";
+  form.email = "";
+  form.message = "";
+  form.website = "";
+  submitting.value = false;
+  sent.value = false;
+  clearErrors();
+}
+
+const panelCloseTransitionMs = 500;
+let resetTimeout: ReturnType<typeof setTimeout> | undefined;
+
+watch(contactPanelOpen, (isOpen, wasOpen) => {
+  if (wasOpen && !isOpen) {
+    clearTimeout(resetTimeout);
+    resetTimeout = setTimeout(resetForm, panelCloseTransitionMs);
+  }
+});
 
 /**
  * Validates the form with the shared schema and stores field-level messages.
