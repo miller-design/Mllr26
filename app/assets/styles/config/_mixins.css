@@ -5,9 +5,10 @@
  *   → --<token-name>: clamp(min, interpolated, max)
  */
 @define-mixin fluid $name, $min, $max {
+  /* `tan(atan2())` derives a unitless length ratio without typed division. */
   --$(name): clamp(
     $(min),
-    calc($(min) + ($(max) - $(min)) * ((100vw - var(--fluid-min)) / var(--fluid-range))),
+    calc($(min) + ($(max) - $(min)) * tan(atan2(calc(100vw - var(--fluid-min)), var(--fluid-range)))),
     $(max)
   );
 }
