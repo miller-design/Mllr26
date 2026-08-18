@@ -37,8 +37,8 @@
   row-gap: var(--space-3);
   pointer-events: none;
 
-  @media (hover: hover) {
-    &:hover a {
+  @mixin hover {
+    & a {
       opacity: 0.6;
     }
 

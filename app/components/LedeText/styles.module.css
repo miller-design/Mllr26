@@ -46,13 +46,10 @@
   & a {
     text-decoration: underline;
     text-underline-offset: 0.15em;
+    transition: opacity 400ms ease;
 
-    @media (hover: hover) {
-      transition: opacity 400ms ease;
-
-      &:hover {
-        opacity: 0.3;
-      }
+    @mixin hover {
+      opacity: 0.3;
     }
   }
 

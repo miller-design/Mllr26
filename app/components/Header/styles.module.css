@@ -8,6 +8,12 @@
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   column-gap: var(--grid-gap);
   padding: var(--grid-margin);
+
+  &.notHome {
+    & .linkList {
+      display: flex;
+    }
+  }
 }
 
 .wrapper {
@@ -20,9 +26,9 @@
 }
 
 .linkList {
+  display: none;
   position: relative;
   width: fit-content;
-  display: flex;
   justify-content: center;
   align-items: center;
   gap: var(--space-4);
@@ -38,10 +44,8 @@
   font-weight: 600;
   transition: opacity 0.3s ease;
 
-  @media (hover: hover) {
-    &:hover {
-      opacity: 0.3;
-    }
+  @mixin hover {
+    opacity: 0.3;
   }
 }
 
@@ -64,5 +68,35 @@
     &.reverse {
       transform: translateX(100%) rotate(180deg);
     }
+  }
+}
+
+.contactButton {
+  all: unset;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  text-transform: uppercase;
+  color: var(--color-text);
+  font-size: var(--text-lg);
+  line-height: var(--leading-tighter);
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  column-gap: var(--space-2);
+  cursor: pointer;
+
+  @mixin hover {
+    opacity: 0.3;
+  }
+
+  & span {
+    width: 0.75rem;
+    height: 0.75rem;
+    background: var(--color-text);
+    border-radius: 50%;
+    display: inline-block;
   }
 }
