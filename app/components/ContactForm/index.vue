@@ -61,6 +61,7 @@ const form = reactive({
   company: "",
   email: "",
   message: "",
+  website: "",
 });
 
 const submitting = ref(false);
@@ -156,6 +157,17 @@ function onClose() {
     </h2>
 
     <form :class="styles.form" novalidate @submit="onSubmit">
+      <div :class="styles.honeypot" aria-hidden="true">
+        <label for="website">Website</label>
+        <input
+          id="website"
+          v-model="form.website"
+          name="website"
+          type="text"
+          tabindex="-1"
+          autocomplete="off"
+        />
+      </div>
       <div
         v-for="field in formFields"
         :key="field.name"
