@@ -73,7 +73,7 @@ const slides = ref<TickerSlide[]>([]);
 const INTERVAL_MS = 800;
 
 /** Hide the ticker once scroll passes this many pixels. */
-const SCROLL_HIDE_THRESHOLD = 8;
+const SCROLL_HIDE_THRESHOLD = 5;
 
 /** Snappy ease — quick settle, almost no linger. */
 const SNAP_EASE = [0.26, 0.02, 0.23, 0.94] as const;

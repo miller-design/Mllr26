@@ -12,6 +12,10 @@
   @media (--xl) {
     height: 75%;
   }
+
+  @media (--letter-box) {
+    height: 90%;
+  }
 }
 
 .wrapper {

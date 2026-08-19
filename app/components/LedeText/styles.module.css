@@ -17,13 +17,17 @@
   margin-bottom: var(--space-6);
   text-wrap: pretty;
 
+  @media (--md) {
+    grid-column: 1 / -3;
+  }
+
   @media (--lg) {
     text-wrap: balance;
     grid-column: 1 / 8;
   }
 
-  @media (--xxl) {
-    grid-column: 1 / 7;
+  @media (--xl) {
+    grid-column: 1 / 6;
   }
 
   @media (--xxxl) {
@@ -54,11 +58,11 @@
   }
 
   @media (--lg) {
-    grid-column: 2 / 9;
+    grid-column: 2 / 8;
   }
 
-  @media (--xxl) {
-    grid-column: 2 / 8;
+  @media (--xl) {
+    grid-column: 2 / 7;
   }
 
   @media (--xxxl) {

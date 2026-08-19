@@ -38,6 +38,10 @@
   @media (--lg) {
     height: 107svh;
   }
+
+  @media (--letter-box) {
+    min-height: 1100px;
+  }
 }
 
 .logoType {
