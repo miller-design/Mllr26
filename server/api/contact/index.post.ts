@@ -12,12 +12,7 @@ export default defineEventHandler(async (event) => {
 
   const config = useRuntimeConfig(event);
 
-  if (
-    !config.resendApiKey ||
-    !config.resendFromName ||
-    !config.resendFromEmail ||
-    !config.resendToEmail
-  ) {
+  if (!config.resendApiKey || !config.resendFromName || !config.resendEmail) {
     throw createError({
       statusCode: 500,
       statusMessage: "Contact email is not configured.",
@@ -27,10 +22,10 @@ export default defineEventHandler(async (event) => {
   const resend = new Resend(config.resendApiKey);
   // admin email
   const { error } = await resend.emails.send({
-    from: `${config.resendFromName} <${config.resendFromEmail}>`,
-    to: config.resendToEmail,
+    from: `Site Contact Form <${config.resendEmail}>`,
+    to: config.resendEmail,
     replyTo: body.email,
-    subject: "New contact form message",
+    subject: `New contact form message from ${body.name}`,
     text: `Name: ${body.name}\nCompany: ${body.company || "Not provided"}\nEmail: ${body.email}\n\nMessage:\n${body.message}`,
     html: contactEmailHtml(body),
   });
@@ -44,7 +39,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const { error: confirmationError } = await resend.emails.send({
-    from: `${config.resendFromName} <${config.resendFromEmail}>`,
+    from: `${config.resendFromName} <${config.resendEmail}>`,
     to: body.email,
     subject: "We received your message",
     text: "Thanks for getting in touch. I've received your message and will get back to you soon.",
