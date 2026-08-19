@@ -266,8 +266,8 @@ function onClose() {
           role="status"
           aria-live="polite"
         >
-          Thanks, {{ form.name.trim() || "friend" }}. for leaving me a message,
-          some whitty message here.
+          Thanks, {{ form.name.trim() || "friend" }}. We appreciate you getting
+          in touch and will get back to you soon.
         </p>
       </div>
     </form>
