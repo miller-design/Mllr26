@@ -8,6 +8,7 @@
  *   .root { padding-inline: 2rem; }
  * }
  */
+@custom-media --xs (min-width: 25em); /* 400px */
 @custom-media --sm (min-width: 40em); /* 640px */
 @custom-media --md (min-width: 48em); /* 768px */
 @custom-media --lg (min-width: 64em); /* 1024px */
