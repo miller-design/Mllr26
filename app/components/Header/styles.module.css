@@ -93,7 +93,9 @@
   font-size: var(--text-lg);
   line-height: var(--leading-tighter);
   font-weight: 600;
-  transition: opacity 0.3s ease;
+  transition:
+    opacity 300ms ease,
+    color 300ms ease;
   display: inline-flex;
   align-items: center;
   column-gap: var(--space-2);
@@ -104,10 +106,23 @@
   }
 
   & span {
+    position: relative;
+    top: -1px;
     width: 0.75rem;
     height: 0.75rem;
     background: var(--color-text);
     border-radius: 50%;
     display: inline-block;
+    transition:
+      background 300ms ease,
+      border-radius 300ms ease;
+  }
+
+  &.contactButtonOpen {
+    --color-text: var(--color-white);
+
+    & span {
+      border-radius: 0;
+    }
   }
 }

@@ -39,7 +39,14 @@ function onContact() {
         </div>
         <NuxtLink to="/" :class="styles.link">Home</NuxtLink>
       </div>
-      <button :class="styles.contactButton" type="button" @click="onContact">
+      <button
+        :class="[
+          styles.contactButton,
+          contactPanelOpen && styles.contactButtonOpen,
+        ]"
+        type="button"
+        @click="onContact"
+      >
         {{ contactPanelOpen ? "Close" : "Contact" }}<span></span>
       </button>
     </div>
