@@ -30,7 +30,7 @@ export function getProjectBySlug(slug: string): Project | undefined {
 
 export const PROJECTS: Project[] = [
   {
-    id: 10,
+    id: 11,
     slug: "hotel-izza",
     name: "Hotel Izza",
     features: ["Next.js", "Storyblok CMS", "Motion"],
@@ -45,7 +45,7 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    id: 9,
+    id: 10,
     slug: "kinfolk",
     name: "Kinfolk",
     features: ["WordPress", "WooCommerce", "GSAP"],
@@ -60,7 +60,7 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    id: 8,
+    id: 9,
     slug: "los-york",
     name: "Los York ®",
     features: ["Next.js", "Sanity CMS", "Motion "],
@@ -75,7 +75,7 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    id: 7,
+    id: 8,
     slug: "assemblage",
     name: "Assemblage",
     features: ["Wordpress", "GSAP"],
@@ -90,7 +90,7 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    id: 6,
+    id: 7,
     slug: "los-films",
     name: "Los ® Films",
     features: ["Next.js", "Sanity CMS", "Motion (Framer Motion)"],
@@ -99,6 +99,21 @@ export const PROJECTS: Project[] = [
     featuredImageRatio: "landscape",
     description:
       "Developed for Los ® Films, the production arm of the Los York family, focused on live action, directors and creative production. Built with Next.js, Sanity CMS and Motion, the site provides a sharp showcase for films, directors and selected work, combining structured content management with polished transitions and a visually led browsing experience.",
+    designer: {
+      name: "Six",
+      link: "https://www.madebysix.com/",
+    },
+  },
+  {
+    id: 6,
+    slug: "andermatt",
+    name: "Andermatt",
+    features: ["WordPress", "GSAP", "Lottie-js"],
+    link: "https://andermatt-realestate.ch/",
+    featuredImage: "/projects/andermatt/thumbnail.webp",
+    featuredImageRatio: "landscape",
+    description:
+      "Developed for Andermatt Swiss Alps, a luxury alpine resort and real estate destination in Switzerland. The site used WordPress and GSAP to create a refined digital experience showcasing the resort and its properties, with a custom Lottie masterplan forming an interactive map that allows users to explore key locations and developments across the resort.",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -309,6 +324,22 @@ export const PROJECT_IMAGES: Record<string, string[]> = {
     "/projects/title/title-4.webp",
     "/projects/title/title-5.webp",
     "/projects/title/title-6.webp",
+  ],
+  andermatt: [
+    "/projects/andermatt/andermatt-1.webp",
+    "/projects/andermatt/andermatt-2.webp",
+    "/projects/andermatt/andermatt-3.webp",
+    "/projects/andermatt/andermatt-4.webp",
+    "/projects/andermatt/andermatt-5.webp",
+    "/projects/andermatt/andermatt-6.webp",
+    "/projects/andermatt/andermatt-7.webp",
+    "/projects/andermatt/andermatt-8.webp",
+    "/projects/andermatt/andermatt-9.webp",
+    "/projects/andermatt/andermatt-10.webp",
+    "/projects/andermatt/andermatt-11.webp",
+    "/projects/andermatt/andermatt-12.webp",
+    "/projects/andermatt/andermatt-13.webp",
+    "/projects/andermatt/andermatt-14.webp",
   ],
 };
 
