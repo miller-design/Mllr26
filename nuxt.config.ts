@@ -72,13 +72,15 @@ export default defineNuxtConfig({
     indexable: process.env.NUXT_SITE_ENV === "production",
   },
 
+  /**
+   * Site-wide Person identity. URL inherits from `site.url` — do not hardcode it here.
+   */
   schemaOrg: {
     identity: {
       type: "Person",
       name: SITE_PERSON_NAME,
       jobTitle: SITE_JOB_TITLE,
       description: SITE_DESCRIPTION,
-      url: process.env.NUXT_SITE_URL || "http://localhost:3000",
     },
   },
 
