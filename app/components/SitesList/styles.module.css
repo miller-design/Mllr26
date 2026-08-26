@@ -111,7 +111,6 @@
   display: none;
   grid-column: 2 / -3;
   flex-direction: column;
-  justify-content: flex-end;
 
   /**
    * Hover-capable viewports: always reserve the preview slot. Below `--lg`
@@ -123,6 +122,8 @@
 
   @media (--lg) {
     grid-column: 1 / 6;
+    flex-direction: column-reverse;
+    height: 100%;
     grid-row: 1;
   }
 
@@ -147,10 +148,9 @@
     @media (--lg) {
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      aspect-ratio: auto;
-      background-color: transparent;
-      overflow: visible;
+      position: sticky;
+      bottom: var(--grid-margin);
+      height: fit-content;
     }
   }
 
