@@ -7,8 +7,9 @@ import {
 /**
  * Applies page SEO, Open Graph, and Schema.org metadata for a project.
  *
- * Uses the project featured image for shares; other pages use `SITE_OG_IMAGE`.
- * Strips simple HTML (e.g. `<em>`) from descriptions so meta tags stay plain text.
+ * Prefer `project.metaDescription` (~150–160 chars) when set; otherwise falls
+ * back to the on-page `description` (HTML stripped). Uses the project featured
+ * image for shares; other pages use `SITE_OG_IMAGE`.
  *
  * @param project - Portfolio project used to populate title, description, and image.
  * @example
@@ -17,7 +18,8 @@ import {
  */
 export function useProjectSeo(project: Project) {
   const description =
-    stripHtml(project.description ?? "") || SITE_DESCRIPTION;
+    stripHtml(project.metaDescription ?? project.description ?? "") ||
+    SITE_DESCRIPTION;
   const title = project.name;
   const shareTitle = projectShareTitle(title);
   const ogImage = project.featuredImage;

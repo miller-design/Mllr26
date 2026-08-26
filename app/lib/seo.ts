@@ -17,9 +17,9 @@ export const SITE_PERSON_NAME = "Jack Miller";
 /** Job title used in schema.org Person identity. */
 export const SITE_JOB_TITLE = "Creative Developer";
 
-/** Default meta description used across SEO helpers and page fallbacks. */
+/** Default meta description used across SEO helpers and page fallbacks (~150–160 chars). */
 export const SITE_DESCRIPTION =
-  "Portfolio of Jack Miller, a creative developer based in the East Midlands (UK).";
+  "Portfolio of Jack Miller, a creative developer based in the East Midlands (UK). Building high-performing sites with Next.js, Nuxt, WordPress and Motion.";
 
 /** Default Open Graph / Twitter share image (absolute path under `public/`). */
 export const SITE_OG_IMAGE = "/TwitterCard.webp";
@@ -35,7 +35,8 @@ export const SITE_OG_IMAGE = "/TwitterCard.webp";
  * })
  */
 export const HOME_SEO = {
-  title: SITE_PERSON_NAME,
+  /** Document title; @nuxtjs/seo appends `| ${SITE_NAME}` → e.g. `Jack Miller — Creative Developer | Mllr26`. */
+  title: `${SITE_PERSON_NAME} — ${SITE_JOB_TITLE}`,
   shareTitle: `${SITE_PERSON_NAME} — ${SITE_JOB_TITLE}`,
   description: SITE_DESCRIPTION,
 } as const;

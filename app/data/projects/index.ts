@@ -5,6 +5,8 @@ export type Project = {
   slug: string;
   name: string;
   description?: string;
+  /** Plain-text meta description (~150–160 chars). Falls back to `description`. */
+  metaDescription?: string;
   features?: string[];
   link: string | null;
   year?: number;
@@ -39,6 +41,8 @@ export const PROJECTS: Project[] = [
     featuredImageRatio: "landscape",
     description:
       "Developed for Hotel Izza, a characterful Marrakech hotel set across seven restored homes in the Medina, with rooms, courtyards, a rooftop restaurant and a large contemporary art collection. The site was built with Next.js, Storyblok CMS and Motion, creating a flexible editorial platform with elegant transitions, rich imagery and smooth content management for rooms, dining, art and bookings.",
+    metaDescription:
+      "Hotel Izza Marrakech site built with Next.js, Storyblok CMS and Motion—rooms, dining, art and bookings across seven restored Medina homes.",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -54,6 +58,8 @@ export const PROJECTS: Project[] = [
     featuredImageRatio: "landscape",
     description:
       "Built for Kinfolk, a global lifestyle publication covering home, work, style and culture through print, digital stories, subscriptions and commerce. The project used WordPress, WooCommerce and GSAP to support editorial publishing, product sales and animated browsing moments across a refined content experience, helping the brand balance magazine storytelling with a premium online shop.",
+    metaDescription:
+      "Kinfolk global lifestyle magazine site with WordPress, WooCommerce and GSAP—editorial stories, subscriptions and a premium online shop experience.",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -69,6 +75,8 @@ export const PROJECTS: Project[] = [
     featuredImageRatio: "landscape",
     description:
       "Developed for Los York ®, an award-winning creative company working across design, writing, art direction and production for global brands. Built with Next.js, Sanity CMS and Motion, the site gives the team a fast, flexible platform for showcasing work, news and studio culture, with dynamic content structures and fluid transitions that match the energy of the brand.",
+    metaDescription:
+      "Los York ® creative company site with Next.js, Sanity CMS and Motion—showcasing design, production work, news and studio culture for global brands.",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -84,6 +92,8 @@ export const PROJECTS: Project[] = [
     featuredImageRatio: "landscape",
     description:
       "Built for Assemblage Views, a magazine exploring responsible global citizenship through creative, ecological and cultural perspectives. The site used WordPress and GSAP to create an editorial experience with a strong sense of movement, supporting long-form articles, issue-led publishing and immersive storytelling around habitat, nature, design and positive change.",
+    metaDescription:
+      "Assemblage Views magazine built with WordPress and GSAP—immersive editorial storytelling on ecology, culture, habitat and responsible global citizenship.",
     designer: {
       name: "ZZ2C",
       link: "https://www.zz2c.studio/",
@@ -99,6 +109,8 @@ export const PROJECTS: Project[] = [
     featuredImageRatio: "landscape",
     description:
       "Developed for Los ® Films, the production arm of the Los York family, focused on live action, directors and creative production. Built with Next.js, Sanity CMS and Motion, the site provides a sharp showcase for films, directors and selected work, combining structured content management with polished transitions and a visually led browsing experience.",
+    metaDescription:
+      "Los ® Films production site with Next.js, Sanity CMS and Motion—a polished showcase for directors, live action and selected creative production work.",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -114,6 +126,8 @@ export const PROJECTS: Project[] = [
     featuredImageRatio: "landscape",
     description:
       "Developed for Andermatt Swiss Alps, a luxury alpine resort and real estate destination in Switzerland. The site used WordPress and GSAP to create a refined digital experience showcasing the resort and its properties, with a custom Lottie masterplan forming an interactive map that allows users to explore key locations and developments across the resort.",
+    metaDescription:
+      "Andermatt Swiss Alps luxury resort site with WordPress, GSAP and Lottie—alpine real estate with a custom interactive masterplan map experience.",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -129,6 +143,8 @@ export const PROJECTS: Project[] = [
     featuredImageRatio: "landscape",
     description:
       "Built for The One Off, an award-winning retail design agency helping brands connect culture, commerce and customer experience across physical and digital channels. The site used Next.js, Payload V3 and GSAP to support flexible content publishing, case studies and animated interactions, giving the agency a modern platform for presenting retail, branding, interiors, digital and advertising work.",
+    metaDescription:
+      "The One Off retail design agency site with Next.js, Payload V3 and GSAP—animated case studies spanning branding, interiors, digital and advertising.",
     designer: {
       name: "TheOneOff",
       link: "https://theoneoff.com/",
@@ -144,6 +160,8 @@ export const PROJECTS: Project[] = [
     featuredImageRatio: "landscape",
     description:
       "Developed for Fellowship, a contemporary art gallery partnering with artists defining the digital age. Built with WordPress and GSAP, the site supports artists, exhibitions, films and editorial content through a cinematic, highly visual interface. Animation was used to add pace and atmosphere while keeping the focus on digital art, artist profiles and the gallery.\n\n <em>Unfortunately the site is no longer live.</em>",
+    metaDescription:
+      "Fellowship contemporary art gallery site with WordPress and GSAP—artists, exhibitions and editorial content in a cinematic, highly visual interface.",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -159,6 +177,8 @@ export const PROJECTS: Project[] = [
     featuredImageRatio: "landscape",
     description:
       "Built for Title, a curated platform sharing stories about the future of life on Earth, sustainability, climate and responsible action. The site used Nuxt.js, Storyblok CMS and GSAP to deliver a flexible editorial experience, supporting topics, stories and directory content with smooth animation and a lightweight structure for publishing global environmental perspectives.",
+    metaDescription:
+      "Title climate and sustainability platform built with Nuxt, Storyblok and GSAP—editorial stories on responsible living and the future of life on Earth.",
     designer: {
       name: "ZZ2C",
       link: "https://www.zz2c.studio/",
@@ -174,6 +194,8 @@ export const PROJECTS: Project[] = [
     featuredImageRatio: "landscape",
     description:
       "Developed for Berkeley & Stuart, an online wine merchant specialising in fine and rare wines from Europe and the New World. Built with WordPress and WooCommerce, the site supports product browsing, producer content and ecommerce journeys for a carefully curated wine collection, combining premium editorial detail with practical shopping flows.",
+    metaDescription:
+      "Berkeley & Stuart fine wine ecommerce with WordPress and WooCommerce—producer stories and shopping journeys for rare European and New World wines.",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",
@@ -189,6 +211,8 @@ export const PROJECTS: Project[] = [
     featuredImageRatio: "landscape",
     description:
       "Built for Huxley Parlour, a London and Wiltshire gallery specialising in postwar and contemporary painting and photography. The project used WordPress and GSAP to support artists, exhibitions, fairs, critical texts and enquiries, creating a refined gallery experience with elegant motion, flexible content management and a strong visual structure for artworks and exhibition.",
+    metaDescription:
+      "Huxley Parlour London gallery site with WordPress and GSAP—artists, exhibitions and critical texts for postwar and contemporary painting and photography.",
     designer: {
       name: "Six",
       link: "https://www.madebysix.com/",

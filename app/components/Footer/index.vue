@@ -68,7 +68,13 @@ const { footerHeight, y, overlayOpacity, shouldReveal } =
         </p>
         <ul :class="styles.legal">
           <li v-for="link in FOOTER_LINKS" :key="link.id">
-            <NuxtLink :to="link.url" :class="styles.legalLink">
+            <NuxtLink
+              :to="link.url"
+              :class="styles.legalLink"
+              :external="link.external"
+              :target="link.external ? '_blank' : undefined"
+              :rel="link.external ? 'noopener noreferrer' : undefined"
+            >
               {{ link.text }}
             </NuxtLink>
           </li>

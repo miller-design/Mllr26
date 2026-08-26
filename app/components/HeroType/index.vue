@@ -1,13 +1,14 @@
 <script setup lang="ts">
 /**
- * Full-bleed hero title that scales to its container via SVG `textLength`,
- * with a visually hidden h1 for screen readers and SEO.
+ * Full-bleed decorative hero wordmark (SVG logo type).
  *
- * @param title - Heading copy (also drawn inside the SVG).
+ * The document H1 lives in `LedeText` so the primary heading carries
+ * topical SEO copy rather than the brand name alone.
+ *
  * @param className - Optional class on the root wrapper.
  *
  * @example
- * <HeroType title="MLLR26" />
+ * <HeroType />
  */
 import { motion } from "motion-v";
 import styles from "./styles.module.css";
@@ -37,8 +38,7 @@ const logoType = {
 
 <template>
   <div :class="[styles.root, className]">
-    <h1 :class="styles.srOnly">MLLR26</h1>
-    <div :class="styles.wrapper">
+    <div :class="styles.wrapper" aria-hidden="true">
       <motion.div
         :variants="logoType"
         :initial="playEntrance ? 'initial' : false"

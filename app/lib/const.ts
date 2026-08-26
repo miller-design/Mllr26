@@ -11,14 +11,32 @@ export type FooterLink = {
   external?: boolean;
 };
 
+/** Personal profiles used for outbound E-E-A-T / schema `sameAs`. */
+export const SOCIAL_PROFILES = {
+  github: "https://github.com/miller-design",
+  linkedin: "https://www.linkedin.com/in/jmiller1994",
+} as const;
+
 export const FOOTER_LINKS: FooterLink[] = [
   {
     id: 1,
+    text: "GitHub",
+    url: SOCIAL_PROFILES.github,
+    external: true,
+  },
+  {
+    id: 2,
+    text: "LinkedIn",
+    url: SOCIAL_PROFILES.linkedin,
+    external: true,
+  },
+  {
+    id: 3,
     text: "Privacy Policy",
     url: "/privacy-policy",
   },
   {
-    id: 2,
+    id: 4,
     text: "Cookie Policy",
     url: "/cookie-policy",
   },

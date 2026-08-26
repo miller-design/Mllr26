@@ -7,6 +7,7 @@ import {
   SITE_OG_IMAGE,
   SITE_PERSON_NAME,
 } from "./app/lib/seo";
+import { SOCIAL_PROFILES } from "./app/lib/const";
 
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
@@ -81,6 +82,7 @@ export default defineNuxtConfig({
       name: SITE_PERSON_NAME,
       jobTitle: SITE_JOB_TITLE,
       description: SITE_DESCRIPTION,
+      sameAs: [SOCIAL_PROFILES.github, SOCIAL_PROFILES.linkedin],
     },
   },
 
