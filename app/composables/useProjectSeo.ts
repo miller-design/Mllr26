@@ -32,11 +32,36 @@ export function useProjectSeo(project: Project) {
     twitterImage: ogImage,
   });
 
+  const { url: siteUrl } = useSiteConfig();
+  const pageUrl = `${siteUrl}/projects/${project.slug}`;
+  const workId = `${pageUrl}#work`;
+
   useSchemaOrg([
     defineWebPage({
       name: title,
       description,
+      mainEntity: { "@id": workId },
     }),
+    {
+      "@type": "CreativeWork",
+      "@id": workId,
+      name: title.trim(),
+      description,
+      url: pageUrl,
+      image: new URL(project.featuredImage, siteUrl).href,
+      ...(project.year && { dateCreated: String(project.year) }),
+      ...(project.features?.length && {
+        keywords: project.features.map((feature) => feature.trim()),
+      }),
+      ...(project.link && { sameAs: project.link }),
+      creator: { "@id": `${siteUrl}/#identity` },
+      contributor: {
+        "@type": "Organization",
+        name: project.designer.name,
+        url: project.designer.link,
+      },
+      ...(project.link && { workExample: { "@type": "WebSite", url: project.link } }),
+    },
     defineBreadcrumb({
       itemListElement: [
         { name: "Home", item: "/" },
