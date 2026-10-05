@@ -12,10 +12,7 @@ const { project, className } = defineProps<ProjectDetailsProps>();
         <span :class="styles.label">Description:</span>
         <span v-html="parseRichText(project.description)"></span>
       </p>
-      <ul
-        :class="styles.features"
-        v-if="project.features && project.features.length > 0"
-      >
+      <ul :class="styles.features" v-if="project.features && project.features.length > 0">
         <span :class="styles.label">Tech:</span>
         <li v-for="feature in project.features" :key="feature">
           {{ feature }}
@@ -23,12 +20,9 @@ const { project, className } = defineProps<ProjectDetailsProps>();
       </ul>
       <p :class="styles.designer" v-if="project.designer">
         <span :class="styles.label">Designed by: </span>
-        <NuxtLink
-          :to="project.designer.link"
-          target="_blank"
-          rel="noopener noreferrer"
-          >{{ project.designer.name }}</NuxtLink
-        >
+        <NuxtLink :to="project.designer.link" target="_blank" rel="noopener noreferrer">{{
+          project.designer.name
+        }}</NuxtLink>
       </p>
       <p :class="styles.year" v-if="project.year">
         <span :class="styles.label">Developed in: </span>{{ project.year }}

@@ -7,16 +7,16 @@
  * @example
  * throw createError({ status: 404, statusText: 'Not found' })
  */
-import type { NuxtError } from '#app'
-import styles from './error/styles.module.css'
+import type { NuxtError } from "#app";
+import styles from "./error/styles.module.css";
 
 const props = defineProps<{
-  error: NuxtError
-}>()
+  error: NuxtError;
+}>();
 
 const message = computed(
-  () => props.error.statusText || props.error.message || 'Something went wrong',
-)
+  () => props.error.statusText || props.error.message || "Something went wrong",
+);
 
 useSeoMeta({
   title: computed(() => {
@@ -37,10 +37,8 @@ function goHome() {
 
 <template>
   <div :class="styles.page">
-    <p :class="styles.code">{{ error.status || 'Error' }}</p>
+    <p :class="styles.code">{{ error.status || "Error" }}</p>
     <h1>{{ message }}</h1>
-    <button type="button" :class="styles.link" @click="goHome">
-      Back home
-    </button>
+    <button type="button" :class="styles.link" @click="goHome">Back home</button>
   </div>
 </template>

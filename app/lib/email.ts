@@ -28,16 +28,16 @@ type EmailLayoutOptions = {
   content: string;
 };
 
+const HTML_ESCAPE_MAP: Record<string, string> = {
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  "'": "&#39;",
+  '"': "&quot;",
+};
+
 function escapeHtml(value: string): string {
-  return value.replace(/[&<>'"]/g, (character) => {
-    return {
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      "'": "&#39;",
-      '"': "&quot;",
-    }[character]!;
-  });
+  return value.replace(/[&<>'"]/g, (character) => HTML_ESCAPE_MAP[character] ?? character);
 }
 
 /**
@@ -78,12 +78,7 @@ function textStyle(size: number, lineHeight: number, extra = ""): string {
  *   content: "<p style=\"margin:0;\">Hello</p>",
  * })
  */
-function wrapEmailHtml({
-  title,
-  preheader,
-  heading,
-  content,
-}: EmailLayoutOptions): string {
+function wrapEmailHtml({ title, preheader, heading, content }: EmailLayoutOptions): string {
   const safeTitle = escapeHtml(title);
   const safePreheader = escapeHtml(preheader);
   const safeHeading = escapeHtml(heading);
@@ -205,12 +200,7 @@ function detailRow(label: string, valueHtml: string): string {
  *   website: "",
  * })
  */
-export function contactEmailHtml({
-  name,
-  company,
-  email,
-  message,
-}: ContactFormData): string {
+export function contactEmailHtml({ name, company, email, message }: ContactFormData): string {
   const safeEmail = escapeHtml(email);
   const details = [
     detailRow("Name", escapeHtml(name)),

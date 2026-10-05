@@ -1,6 +1,6 @@
+import { Resend } from "resend";
 import { contactSchema } from "#shared/schemas/contact";
 import { contactConfirmationEmailHtml, contactEmailHtml } from "~/lib/email";
-import { Resend } from "resend";
 
 export default defineEventHandler(async (event) => {
   const body = await readValidatedBody(event, contactSchema.parse);

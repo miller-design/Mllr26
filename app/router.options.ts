@@ -46,4 +46,4 @@ const scrollBehavior: RouterScrollBehavior = (to, from, savedPosition) => {
   });
 };
 
-export default <RouterConfig>{ scrollBehavior };
+export default (<RouterConfig>{ scrollBehavior });

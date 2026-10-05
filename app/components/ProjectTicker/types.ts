@@ -6,5 +6,5 @@
  */
 export interface ProjectTickerProps {
   /** Optional class for the root element. */
-  className?: string
+  className?: string;
 }

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import styles from "./styles.module.css";
-import { submissionErrorMessage } from "../../utils/getFormErrors";
-import type { ContactFormProps } from "./types";
 import { contactSchema } from "#shared/schemas/contact";
+import { submissionErrorMessage } from "../../utils/getFormErrors";
+import styles from "./styles.module.css";
+import type { ContactFormProps } from "./types";
 
 const { className } = defineProps<ContactFormProps>();
 const contactPanelOpen = useState("contact-panel-open", () => false);
@@ -17,8 +17,13 @@ onMounted(() => {
   };
 
   updateHeight();
+
+  const panelEl = panel.value;
+  if (!panelEl) {
+    return;
+  }
   resizeObserver = new ResizeObserver(updateHeight);
-  resizeObserver.observe(panel.value!);
+  resizeObserver.observe(panelEl);
 });
 
 onBeforeUnmount(() => {
@@ -131,11 +136,7 @@ function validateForm(): boolean {
   for (const issue of result.error.issues) {
     const field = issue.path[0];
 
-    if (
-      typeof field === "string" &&
-      field in form &&
-      !nextFieldErrors[field as FieldName]
-    ) {
+    if (typeof field === "string" && field in form && !nextFieldErrors[field as FieldName]) {
       nextFieldErrors[field as FieldName] = issue.message;
     }
   }
@@ -178,13 +179,9 @@ function onClose() {
 </script>
 
 <template>
-  <div
-    ref="panel"
-    :class="[styles.root, contactPanelOpen && styles.isOpen, className]"
-  >
+  <div ref="panel" :class="[styles.root, contactPanelOpen && styles.isOpen, className]">
     <h2 :class="styles.title">
-      Have a question? Leave me a message and I'll get back to you after the
-      beep.
+      Have a question? Leave me a message and I'll get back to you after the beep.
     </h2>
 
     <form :class="styles.form" novalidate @submit="onSubmit">
@@ -197,7 +194,7 @@ function onClose() {
           type="text"
           tabindex="-1"
           autocomplete="off"
-        />
+        >
       </div>
       <div
         v-for="field in formFields"
@@ -218,7 +215,7 @@ function onClose() {
           :aria-describedby="
             fieldErrors[field.name] ? `${field.name}-error` : undefined
           "
-        />
+        >
         <textarea
           v-else
           :id="field.name"
@@ -249,28 +246,19 @@ function onClose() {
       </div>
 
       <div :class="styles.controls">
-        <button
-          :class="styles.button"
-          type="submit"
-          :disabled="submitting || sent"
-        >
+        <button :class="styles.button" type="submit" :disabled="submitting || sent">
           {{ submitting ? "Sending..." : "Submit" }}
         </button>
         <p v-if="error" :class="styles.error" role="alert">
           {{ error }}
         </p>
 
-        <p
-          v-if="sent"
-          :class="styles.successMessage"
-          role="status"
-          aria-live="polite"
-        >
-          Thanks, {{ form.name.trim() || "friend" }}. We appreciate you getting
-          in touch and will get back to you soon.
+        <p v-if="sent" :class="styles.successMessage" role="status" aria-live="polite">
+          Thanks, {{ form.name.trim() || "friend" }}. We appreciate you getting in touch and will
+          get back to you soon.
         </p>
       </div>
     </form>
   </div>
-  <div :class="styles.overlay" @click="onClose"></div>
+  <button type="button" :class="styles.overlay" aria-label="Close contact form" @click="onClose" />
 </template>

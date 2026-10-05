@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import BracketIcon from "~/assets/icons/bracket.svg";
 import styles from "./styles.module.css";
 import type { HeaderProps } from "./types";
-import BracketIcon from "~/assets/icons/bracket.svg";
 
 const { className } = defineProps<HeaderProps>();
 const route = useRoute();

@@ -11,9 +11,9 @@
  */
 import { motion, useSpring } from "motion-v";
 import { nextTick, onMounted, onUnmounted, ref } from "vue";
+import type { FeaturedImageRatio, Project } from "~/data/projects";
 import styles from "./styles.module.css";
 import type { SitesListProps } from "./types";
-import type { FeaturedImageRatio, Project } from "~/data/projects";
 
 /** Matches `.indicator` width/height in `styles.module.css`. */
 const INDICATOR_SIZE_PX = 6;
@@ -186,9 +186,7 @@ onUnmounted(() => {
           :class="styles.item"
           @mouseenter="onItemEnter(project, index)"
         >
-          <NuxtLink
-            :to="{ name: 'projects-slug', params: { slug: project.slug } }"
-          >
+          <NuxtLink :to="{ name: 'projects-slug', params: { slug: project.slug } }">
             <h3>
               <template
                 v-for="(segment, segmentIndex) in nameSegments(project.name)"
@@ -210,11 +208,7 @@ onUnmounted(() => {
       </ul>
     </div>
 
-    <div
-      v-if="activeProject"
-      :class="styles.featuredImage"
-      aria-hidden="true"
-    >
+    <div v-if="activeProject" :class="styles.featuredImage" aria-hidden="true">
       <div :class="styles.imageFrame">
         <div
           :class="[
@@ -226,7 +220,7 @@ onUnmounted(() => {
             :src="activeProject.featuredImage"
             :alt="`${activeProject.name} featured image`"
             :class="styles.image"
-          />
+          >
         </div>
       </div>
     </div>

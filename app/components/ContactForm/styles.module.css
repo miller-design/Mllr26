@@ -79,11 +79,7 @@
 .fieldInvalid {
   & .input,
   & .textarea {
-    border-block-end-color: color-mix(
-      in srgb,
-      var(--color-red) 70%,
-      transparent
-    );
+    border-block-end-color: color-mix(in srgb, var(--color-red) 70%, transparent);
   }
 }
 
@@ -202,6 +198,10 @@
 }
 
 .overlay {
+  appearance: none;
+  border: none;
+  margin: 0;
+  padding: 0;
   position: fixed;
   top: 0;
   left: 0;

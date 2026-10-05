@@ -11,9 +11,9 @@
  * <HeroType />
  */
 import { motion } from "motion-v";
+import LogoType from "~/assets/icons/logo-type.svg";
 import styles from "./styles.module.css";
 import type { HeroTypeProps } from "./types";
-import LogoType from "~/assets/icons/logo-type.svg";
 
 const { className } = defineProps<HeroTypeProps>();
 

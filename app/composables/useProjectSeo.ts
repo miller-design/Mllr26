@@ -1,8 +1,5 @@
 import type { Project } from "~/data/projects";
-import {
-  projectShareTitle,
-  SITE_DESCRIPTION,
-} from "~/lib/seo";
+import { projectShareTitle, SITE_DESCRIPTION } from "~/lib/seo";
 
 /**
  * Applies page SEO, Open Graph, and Schema.org metadata for a project.
@@ -18,8 +15,7 @@ import {
  */
 export function useProjectSeo(project: Project) {
   const description =
-    stripHtml(project.metaDescription ?? project.description ?? "") ||
-    SITE_DESCRIPTION;
+    stripHtml(project.metaDescription ?? project.description ?? "") || SITE_DESCRIPTION;
   const title = project.name;
   const shareTitle = projectShareTitle(title);
   const ogImage = project.featuredImage;

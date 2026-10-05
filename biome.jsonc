@@ -1,0 +1,148 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "includes": [
+      "app/**",
+      "server/**",
+      "shared/**",
+      "nuxt.config.ts",
+      "!**/.fttemplates",
+      "!**/app/assets/styles/config/_mixins.css"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100
+  },
+  "javascript": {
+    "formatter": {
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "quoteStyle": "double"
+    }
+  },
+  "html": {
+    "experimentalFullSupportEnabled": true,
+    "formatter": {
+      "enabled": true,
+      "indentWidth": 2
+    }
+  },
+  "css": {
+    "formatter": {
+      "enabled": true
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "recommended",
+      "suspicious": {
+        // PostCSS: @custom-media, @mixin, postcss-nested, etc.
+        "noUnknownAtRules": "off"
+      }
+    }
+  },
+  "overrides": [
+    {
+      // Vue SFCs: script bindings used in <template> look unused to the analyzer.
+      // https://biomejs.dev/internals/language-support/#linting-html-ish-languages
+      "includes": ["**/*.vue"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useConst": "off",
+            "useImportType": "off",
+            "useVueMultiWordComponentNames": "off"
+          },
+          "correctness": {
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off",
+            "noUnknownTypeSelector": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["nuxt.config.ts"],
+      "javascript": {
+        "globals": ["defineNuxtConfig"]
+      },
+      "linter": {
+        "rules": {
+          "correctness": {
+            "useImportExtensions": "off",
+            "noUnresolvedImports": "off",
+            "noProcessGlobal": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["server/**"],
+      "javascript": {
+        "globals": [
+          "defineEventHandler",
+          "defineCachedEventHandler",
+          "readValidatedBody",
+          "readBody",
+          "getQuery",
+          "getRouterParam",
+          "useRuntimeConfig",
+          "createError",
+          "sendRedirect",
+          "setResponseStatus"
+        ]
+      },
+      "linter": {
+        "rules": {
+          "correctness": {
+            "useImportExtensions": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["app/plugins/**"],
+      "javascript": {
+        "globals": ["defineNuxtPlugin"]
+      }
+    },
+    {
+      "includes": ["app/middleware/**"],
+      "javascript": {
+        "globals": ["defineNuxtRouteMiddleware"]
+      }
+    },
+    {
+      "includes": ["**/*.module.css", "app/assets/styles/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noDescendingSpecificity": "off"
+          },
+          "correctness": {
+            "noUnknownPseudoClass": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["app/assets/icons/**"],
+      "linter": {
+        "enabled": false
+      },
+      "formatter": {
+        "enabled": false
+      }
+    }
+  ]
+}

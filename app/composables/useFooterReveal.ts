@@ -1,5 +1,5 @@
-import { useReducedMotion, useScroll, useSpring, useTransform } from "motion-v";
 import { useMediaQuery } from "@vueuse/core";
+import { useReducedMotion, useScroll, useSpring, useTransform } from "motion-v";
 import type { ComponentPublicInstance, Ref } from "vue";
 
 type ElementRef = Ref<HTMLElement | ComponentPublicInstance | null>;
@@ -22,9 +22,7 @@ type UseFooterRevealOptions = {
  * @example
  * resolveElement(footerRef.value) // → HTMLElement | null
  */
-function resolveElement(
-  value: HTMLElement | ComponentPublicInstance | null,
-): HTMLElement | null {
+function resolveElement(value: HTMLElement | ComponentPublicInstance | null): HTMLElement | null {
   if (value instanceof HTMLElement) {
     return value;
   }
@@ -57,9 +55,7 @@ export function useFooterReveal({
 }: UseFooterRevealOptions) {
   const prefersReducedMotion = useReducedMotion();
   const supportsHover = useMediaQuery("(hover: hover)");
-  const shouldReveal = computed(
-    () => supportsHover.value && !prefersReducedMotion.value,
-  );
+  const shouldReveal = computed(() => supportsHover.value && !prefersReducedMotion.value);
   const footerHeight = ref(0);
 
   let resizeObserver: ResizeObserver | undefined;

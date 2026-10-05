@@ -119,10 +119,7 @@ const titleReveal = {
           animate="animate"
         >
           <h1 ref="titleRef" :class="styles.title">
-            <template
-              v-for="(segment, index) in nameSegments(title)"
-              :key="index"
-            >
+            <template v-for="(segment, index) in nameSegments(title)" :key="index">
               {{ segment.part }}
               <span
                 v-if="segment.showMark"

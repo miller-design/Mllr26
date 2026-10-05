@@ -33,7 +33,7 @@ const targetFolder = computed(() => {
 
 <template>
   <div>
-    <ProjectHero :title="project.name" :sizeOverride="sizeOverride" />
+    <ProjectHero :title="project.name" :size-override="sizeOverride" />
     <div class="grid">
       <ProjectDetails :project="project" />
       <ProjectGallery :slug="targetFolder" />

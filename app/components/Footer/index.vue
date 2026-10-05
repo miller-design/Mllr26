@@ -14,11 +14,11 @@
  */
 import { motion } from "motion-v";
 import type { ComponentPublicInstance } from "vue";
-import styles from "./styles.module.css";
-import type { FooterProps } from "./types";
-import { useFooterReveal } from "../../composables/useFooterReveal";
 import LogoType from "~/assets/icons/logo-type.svg";
 import { FOOTER_LINKS } from "~/lib/const";
+import { useFooterReveal } from "../../composables/useFooterReveal";
+import styles from "./styles.module.css";
+import type { FooterProps } from "./types";
 
 const { className } = defineProps<FooterProps>();
 const year = new Date().getFullYear();
@@ -26,11 +26,10 @@ const year = new Date().getFullYear();
 const footerRef = ref<HTMLElement | ComponentPublicInstance | null>(null);
 const spacerRef = ref<HTMLElement | null>(null);
 
-const { footerHeight, y, overlayOpacity, shouldReveal } =
-  useFooterReveal({
-    footerRef,
-    spacerRef,
-  });
+const { footerHeight, y, overlayOpacity, shouldReveal } = useFooterReveal({
+  footerRef,
+  spacerRef,
+});
 </script>
 
 <template>
@@ -50,11 +49,7 @@ const { footerHeight, y, overlayOpacity, shouldReveal } =
     :style="{ opacity: overlayOpacity }"
   />
 
-  <motion.div
-    ref="footerRef"
-    :class="styles.shell"
-    :style="shouldReveal ? { y } : undefined"
-  >
+  <motion.div ref="footerRef" :class="styles.shell" :style="shouldReveal ? { y } : undefined">
     <footer :class="[styles.root, className]">
       <div :class="styles.wordmark">
         <NuxtLink to="/" :class="styles.wordmarkLink" aria-label="MLLR home">
@@ -63,9 +58,7 @@ const { footerHeight, y, overlayOpacity, shouldReveal } =
       </div>
 
       <div :class="styles.bar">
-        <p :class="styles.copyright">
-          &copy;{{ year }} MLLR. All rights reserved.
-        </p>
+        <p :class="styles.copyright">&copy;{{ year }} MLLR. All rights reserved.</p>
         <ul :class="styles.legal">
           <li v-for="link in FOOTER_LINKS" :key="link.id">
             <NuxtLink

@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import svgLoader from "vite-svg-loader";
+import { SOCIAL_PROFILES } from "./app/lib/const";
 import {
   SITE_DESCRIPTION,
   SITE_JOB_TITLE,
@@ -7,7 +8,6 @@ import {
   SITE_OG_IMAGE,
   SITE_PERSON_NAME,
 } from "./app/lib/seo";
-import { SOCIAL_PROFILES } from "./app/lib/const";
 
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",

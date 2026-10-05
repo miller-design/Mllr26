@@ -1,12 +1,8 @@
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref, watch } from "vue";
 import { motion, useReducedMotion, useScroll } from "motion-v";
+import { computed, onMounted, onUnmounted, ref, watch } from "vue";
 import BracketIcon from "~/assets/icons/bracket.svg";
-import {
-  PROJECTS,
-  type FeaturedImageRatio,
-  type Project,
-} from "~/data/projects";
+import { type FeaturedImageRatio, PROJECTS, type Project } from "~/data/projects";
 import styles from "./styles.module.css";
 import type { ProjectTickerProps } from "./types";
 
@@ -236,7 +232,7 @@ onUnmounted(() => {
               :src="slide.project.featuredImage"
               :alt="`${slide.project.name} featured image`"
               :class="styles.image"
-            />
+            >
           </div>
         </motion.div>
         <div :class="styles.bracketIcons">

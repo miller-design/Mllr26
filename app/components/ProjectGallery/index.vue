@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { getProjectImages } from "~/data/projects";
 import styles from "./styles.module.css";
 import type { ProjectGalleryProps } from "./types";
-import { getProjectImages } from "~/data/projects";
 
 /**
  * Renders a project's gallery images from `public/projects/{slug}`.
@@ -23,7 +23,7 @@ const images = getProjectImages(slug);
   <div :class="[styles.root, className]">
     <ul v-if="images.length" :class="styles.list">
       <li v-for="src in images" :key="src" :class="styles.item">
-        <img :src="src" :alt="`${slug} gallery image`" :class="styles.image" />
+        <img :src="src" :alt="`${slug} gallery image`" :class="styles.image">
       </li>
     </ul>
   </div>

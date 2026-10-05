@@ -5,6 +5,7 @@
  * Footer must sit after `<main>` so its spacer is outside main's background.
  */
 import styles from "./styles.module.css";
+
 const contactPanelOpen = useState("contact-panel-open", () => false);
 const contactPanelHeight = useState("contact-panel-height", () => 0);
 const { lock, unlock } = useLenisScroll();
@@ -21,11 +22,8 @@ watch(contactPanelOpen, () => {
 </script>
 
 <template>
-  <div
-    :class="styles.root"
-    :style="{ '--contact-panel-height': `${contactPanelHeight}px` }"
-  >
-    <Header :panelActive="contactPanelOpen" />
+  <div :class="styles.root" :style="{ '--contact-panel-height': `${contactPanelHeight}px` }">
+    <Header :panel-active="contactPanelOpen" />
     <ContactForm />
     <main :class="[styles.main, contactPanelOpen && styles.contactPanelOpen]">
       <slot />

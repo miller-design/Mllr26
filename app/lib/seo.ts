@@ -49,8 +49,7 @@ export const HOME_SEO = {
  */
 export const PRIVACY_SEO = {
   title: "Privacy Policy",
-  description:
-    "How Mllr26 collects, uses, and protects personal information on this site.",
+  description: "How Mllr26 collects, uses, and protects personal information on this site.",
 } as const;
 
 /**
