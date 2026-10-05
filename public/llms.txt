@@ -1,0 +1,29 @@
+# Mllr26
+> Portfolio of Jack Miller, a creative developer based in the East Midlands (UK). Building high-performing sites with Next.js, Nuxt, WordPress and Motion.
+
+## About
+- Jack Miller — Creative Developer (East Midlands, UK).
+
+## Main pages
+- [Home](/): Portfolio homepage and work overview.
+
+## Projects
+- [Hotel Izza](/projects/hotel-izza): Hotel Izza Marrakech site built with Next.js, Storyblok CMS and Motion—rooms, dining, art and bookings across seven restored Medina homes.
+- [Kinfolk](/projects/kinfolk): Kinfolk global lifestyle magazine site with WordPress, WooCommerce and GSAP—editorial stories, subscriptions and a premium online shop experience.
+- [Los York ®](/projects/los-york): Los York ® creative company site with Next.js, Sanity CMS and Motion—showcasing design, production work, news and studio culture for global brands.
+- [Assemblage](/projects/assemblage): Assemblage Views magazine built with WordPress and GSAP—immersive editorial storytelling on ecology, culture, habitat and responsible global citizenship.
+- [Los ® Films](/projects/los-films): Los ® Films production site with Next.js, Sanity CMS and Motion—a polished showcase for directors, live action and selected creative production work.
+- [Andermatt](/projects/andermatt): Andermatt Swiss Alps luxury resort site with WordPress, GSAP and Lottie—alpine real estate with a custom interactive masterplan map experience.
+- [TheOneOff](/projects/theoneoff): The One Off retail design agency site with Next.js, Payload V3 and GSAP—animated case studies spanning branding, interiors, digital and advertising.
+- [Fellowship](/projects/fellowship): Fellowship contemporary art gallery site with WordPress and GSAP—artists, exhibitions and editorial content in a cinematic, highly visual interface.
+- [Title](/projects/title): Title climate and sustainability platform built with Nuxt, Storyblok and GSAP—editorial stories on responsible living and the future of life on Earth.
+- [Berkley & Stuart](/projects/berkeley-and-stuart): Berkeley & Stuart fine wine ecommerce with WordPress and WooCommerce—producer stories and shopping journeys for rare European and New World wines.
+- [Huxley Parlour](/projects/huxley-parlour): Huxley Parlour London gallery site with WordPress and GSAP—artists, exhibitions and critical texts for postwar and contemporary painting and photography.
+
+## Policies
+- [Privacy Policy](/privacy-policy): Personal data handling (noindex).
+- [Cookie Policy](/cookie-policy): Cookies and similar tech (noindex).
+
+## Profiles
+- [GitHub](https://github.com/miller-design)
+- [LinkedIn](https://www.linkedin.com/in/jmiller1994)
